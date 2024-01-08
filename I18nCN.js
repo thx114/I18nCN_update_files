@@ -1,4 +1,5 @@
-// V1.3.5
+//REPLACE_ITEMS_START//
+//version=1.4.0//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -220,7 +221,8 @@ function replaceContent() {
                 标签: rif().class('option-page_CW8.option-section_VzQ').class('main-column_D0A').class('content_gqa').class('label_DGc.label_ZLb'),
                 分类: rif().class('option-page_CW8.option-section_VzQ').class('main-column_D0A').class('breadcrumbs_xcd').class('label_sAz.label-level-1'),
                 标题: rif().class('option-page_CW8.option-section_VzQ').class('info-column_uQ0').class('info-title_a3p'),
-                描述: rif().class('option-page_CW8.option-section_VzQ').class('info-column_uQ0').class('info-description_wwd')
+                描述: rif().class('option-page_CW8.option-section_VzQ').class('info-column_uQ0').class('info-description_wwd'),
+                TAB: rif().class('option-page_CW8.option-section_VzQ').class('main-column_D0A').class('tab_P7S')
             },
             下拉框: {
                 标签: rif().class('dropdown-item_sZT'),
@@ -262,16 +264,6 @@ function replaceContent() {
                 头描述: rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').class('header_MP_.header_8H_'),
                 项目: rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').class('header-content_SqG.header-content_wUX').all,
             }
-        }
-        const 传统风味 = {
-            顶栏: rif().class('panel_YqS.economy-panel_e08').class('header_H_U.header_Bpo.child-opacity-transition_nkS').class('title-bar_PF4').class('title_SVH.title_zQN'),
-            TAB: rif().class('panel_YqS.economy-panel_e08').class('tab-bar_oPw').class('tab_Hrb'),
-            标题: rif().class('panel_YqS.economy-panel_e08').class('content_XD5.content_AD7.child-opacity-transition_nkS').class('label_VSW.label_T__').first,
-            标题2: rif().class('panel_YqS.economy-panel_e08').class('content_XD5.content_AD7.child-opacity-transition_nkS').class('label_VSW.label_T__'),
-            描述: rif().class('panel_YqS.economy-panel_e08').class('content_XD5.content_AD7.child-opacity-transition_nkS').class('description_VWf').class('paragraphs_nbD').first,
-            选项: rif().class('panel_YqS.economy-panel_e08').class('content_XD5.content_AD7.child-opacity-transition_nkS').class('item_JFN.button_ECf.item_It6.item-mouse-states_Fmi.item-selected_tAM.item-focused_FuT').class('title_sB9'),
-            按钮: rif({ match: 'inc' }).class('panel_YqS.economy-panel_e08').class('content_XD5.content_AD7.child-opacity-transition_nkS').class('button_WWa'),
-            标签: rif({ match: 'inc' }).class('panel_YqS.economy-panel_e08').class('content_XD5.content_AD7.child-opacity-transition_nkS').class('field_amr.field_cjf').first
         }
         const REPLACE_ITEM_NEW = {
             开发者模式_模拟: RE(
@@ -890,15 +882,15 @@ function replaceContent() {
                 'InfoLoom: Workforce': '信息隐现: 劳动力结构',
                 'InfoLoom: Workplaces': '信息隐现: 工作场所',
                 'InfoLoom: Demand Factors': '信息隐现: 建筑需求',
-                    'InfoLoom: Commercial Data': '信息隐现: 商业信息',
-                    'InfoLoom: Residential Data':'信息隐现: 住宅数据'
+                'InfoLoom: Commercial Data': '信息隐现: 商业信息',
+                'InfoLoom: Residential Data': '信息隐现: 住宅数据'
             },
                 [HOOKUI.面板.标题], {
                 'Demographics': '人口统计',
                 'Demand': '需求',
                 'Workforce Structure': '劳动力结构',
                 'Workplace Distribution': '工作场所分布',
-                    'Commercial Data': '商业数据',
+                'Commercial Data': '商业数据',
                 'Residential Data': '住宅数据'
             },
                 [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').class('row_S2v').isStyle('width: 60.000000%; justify-content: center; ')], {
@@ -907,7 +899,7 @@ function replaceContent() {
                 '- Tourists': '- 游客',
                 '- Commuters': '- 通勤者',
                 '- Moving Away': '- 搬离中',
-                'Population':'人口',
+                'Population': '人口',
                 'Oldest citizen': '最年长市民',
                 'Students': '学生',
                 'Workers': '工人',
@@ -984,8 +976,8 @@ function replaceContent() {
                 'Standard': '标准',
                 'Educated': '受过教育的',
                 'Uneducated': '未受教育的',
-                    'No demand for:': '没有需求:',
-                    'conv.food':'方便食品',
+                'No demand for:': '没有需求:',
+                'conv.food': '方便食品',
                 'food': '食物',
                 'meals': '餐饮',
                 'paper': '纸张',
@@ -1000,11 +992,11 @@ function replaceContent() {
                 'beverages': '饮料',
                 'textiles': '纺织品',
                 'entertainment': '娱乐',
-                    'recreation': '休闲',
-                    'LOW': '低密度',
-                    'MEDIUM': '中密度',
-                    'HIGH': '高密度',
-                    
+                'recreation': '休闲',
+                'LOW': '低密度',
+                'MEDIUM': '中密度',
+                'HIGH': '高密度',
+
                 'Total properties': '总财产',
                 '- Occupied properties': '- 已占用财产',
                 '= Empty properties': '= 空财产',
@@ -1012,27 +1004,27 @@ function replaceContent() {
                 'BUILDING DEMAND': '建筑需求',
                 'STUDY POSITIONS': '学习位置',
                 'HOUSEHOLDS': '家庭'
-                    
+
 
             },
                 [HOOKUI.面板.标签_p], {
-                    'AVERAGE TAX RATE': '平均税率',
-                    '10% is the neutral rate': '正常为10%',
-                    'SERVICE UTILIZATION': '服务利用率',
-                    '30% is the neutral ratio': '正常为30%',
-                    'SALES CAPACITY': '销售能力',
-                    '100% when capacity = consumption': '当销售=消费时为100%',
-                    'EMPLOYEE CAPACITY RATIO': '员工容量',
-                    '75% is the neutral ratio': '正常为75%',
-                    'HAPPINESS': '幸福度',
-                    '50 is neutral': '正常为50%',
-                    'UNEMPLOYMENT': '失业率',
-                    '10% is neutral': '正常为10%',
-                    'HOMELESS': '无家可归',
-                    '0 is neutral': '正常为0%',
+                'AVERAGE TAX RATE': '平均税率',
+                '10% is the neutral rate': '正常为10%',
+                'SERVICE UTILIZATION': '服务利用率',
+                '30% is the neutral ratio': '正常为30%',
+                'SALES CAPACITY': '销售能力',
+                '100% when capacity = consumption': '当销售=消费时为100%',
+                'EMPLOYEE CAPACITY RATIO': '员工容量',
+                '75% is the neutral ratio': '正常为75%',
+                'HAPPINESS': '幸福度',
+                '50 is neutral': '正常为50%',
+                'UNEMPLOYMENT': '失业率',
+                '10% is neutral': '正常为10%',
+                'HOMELESS': '无家可归',
+                '0 is neutral': '正常为0%',
 
-                    "TAX RATE (weighted)": '税率（加权）',
-                    '10 % is neutral': '正常为10%'
+                "TAX RATE (weighted)": '税率（加权）',
+                '10 % is neutral': '正常为10%'
 
             },
                 [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').first.first.index(11).first], {
@@ -1099,75 +1091,12 @@ function replaceContent() {
                 'Line Tool': '条形工具',//
             },
                 [MAIN.工具框.标签], {
-                'Line mode': '模式',//
-                'Rotation': '旋转',//
-                'Spacing variation': '随机间距',//
-                'Offset variation': '随机偏移',//
-                'Spacing': '间距',//
                 'Options': '设置'
             },
                 [MAIN.悬浮框.标题], {
-                'Fence mode': '围栏模式',//
-                'Straight line': '直线',//
-                'Simple curve': '简单曲线',//
-                'Circle': '圆形',//
-                'Fixed length': '固定长度',//
-                'Decrease spacing': '减小间距',//
-                'Increase spacing': '增大间距',//
-                'Random rotation': '随机旋转',//
-                'Rotate anti-clockwise': '逆时针旋转',//
-                'Rotation': '旋转',//
-                'Rotate clockwise': '顺时针旋转',//
-                'Decrease random spacing variation': '减小随机间距变化',//
-                'Spacing variation': '随机间距',//
-                'Increase random spacing variation': '增大随机间距变化',//
-                'Decrease random sideways variation': '减小随机横向变化',//
-                'Offset variation': '随机偏移',//
-                'Increase random sideways variation': '增大随机横向变化',//
-                'Spacing': '间距',//
                 'Single item': '放置单个物件'
             },
                 [MAIN.悬浮框.内容], {
-                'Automatically aligns and places objects continuously, like a fence.':
-                    '自动连续对齐和放置对象，如围栏。',//
-
-                'Place objects along a straight line from point A to point B.':
-                    '在从A点到B点的直线上放置对象。',//
-
-                'Define a start and bend, then define end point.':
-                    '定义起点和弯曲点，然后定义终点。',//
-
-                'Define the center of the circle, then set the radius.':
-                    '定义圆的中心，然后设置半径。',//
-
-                'Space items along the full length of the line from start to end, using the set spacing distance only as an approximation. If this is NOT set then items will be spaced exactly according to the set distance, even if it means they can\'t be placed along the full length of the line.':
-                    '将物品沿着从起点到终点的直线的整个长度间隔排列，仅使用设置的间距距离作为近似值。如果未设置，则物品将根据设置的距离准确排列，即使这意味着它们不能沿直线的整个长度放置。',//
-
-                'Change the step size by holding down the shift key (step by 10m) or control key (step by 0.1m) when clicking.':
-                    '通过按住 shift 键(步进10米)或 control 键(步进0.1米)并单击时更改步进大小。',//
-
-                'Objects will be spaced apart by this amount (or approximately this amount if fixed length spacing is selected).':
-                    '物体之间的间隔将为此数量(如果选择了固定长度间隔，则为大约此数量)。',//
-
-                'Rotate each item randomly so they all face in different directions.':
-                    '随机旋转每个物体，使它们朝向不同方向。',//
-
-                'Change the step size by holding down the shift key (rotate by 90°) or control key (rotate by 1°) when clicking.':
-                    '通过按住 shift 键(旋转90°)或 control 键(旋转1°)并单击时更改步进大小。',//
-
-                'Objects will be rotated by this amount.':
-                    '物体将旋转这么多。',//
-
-                'Change the step size by holding down the shift key (step by 10m) or control key (step by 0.1m) when clicking. Set to zero for precise placement.':
-                    '通过按住 shift 键(步进10米)或 control 键(步进0.1米)并单击时更改步进大小。设置为零以进行精确放置。',//
-
-
-                'Object spacing along the line will be varied by a random distance up to this maximum. Set to zero for precise placement.':
-                    '沿着直线的物体间距将变化到最大随机距离。设置为零以进行精确放置。',//
-
-                'Objects will be randomly offset sideways from the line up to this maximum distance. Set to zero for precise placement.':
-                    '物体将从直线侧向随机偏移到最大距离。设置为零以进行精确放置。',//
-
                 'Place one object at a time using the standard game tool.': '使用标准游戏工具一次放置一个对象。'
 
             },
@@ -1247,198 +1176,6 @@ function replaceContent() {
             传统风味: RE(
                 [HOOKUI.顶栏.名称], {
                 'Legacy Flavour': '传统风味'
-            },
-                [传统风味.TAB], {//
-                'Zone Settings': '功能区设置',
-                'Settings': '设置',
-                'Zone Colours': '功能区颜色',
-                'UI Themes': 'UI 主题',
-                'About': '关于',
-                'Accent': '强调',
-                'Panel': '面板',
-                'Section': '部分',
-                'Selected': '已选择',
-                'Text': '文本',
-                'Menu': '菜单',
-                'Other': '其他'
-            },
-                [传统风味.标题], {//
-                'Use Sticky Whiteness': '持久信息视图白色',
-                'Whiteness Toggle': '信息视图白色切换',
-                'Use Units': '使用 U 长度单位',
-                'Freeze time visuals': '冻结时间视觉效果',
-                'Set visual time of day': '设置视觉时间',
-                'Weather': '天气',
-                'Custom Zone Colouring': '自定义区域着色',
-                'Use Dynamic Cell Borders': '使用动态单元边界',
-                'Empty Cell Opacity': '空单元透明度',
-                'Empty Cell Border Opacity': '空单元边界透明度',
-                'Cell Opacity': '单元透明度',
-                'Cell Border Opacity': '单元边界透明度',
-                'Colour Blindness Mode': '色盲模式',
-                'Residential': '住宅区',
-                'Commercial': '商业区',
-                'Office': '办公区',
-                'Theme': '主题',
-                'Generate from colour': '从颜色生成',
-                'Legacy Flavour': '传统风味',
-
-                'Industrial': '工业'
-            },
-                [传统风味.标题2], {//
-                'Make window transparent': '使窗口透明',
-            },
-                [传统风味.描述], {//
-                'Override the games white info-mode switch, using a custom setting. Toggle with ALT+S.':
-                    '覆盖游戏的白色信息模式切换，使用自定义设置 -快捷键: ALT+S',
-
-                'If \'Use Sticky Whiteness\' is enabled, the info-mode white setting will be set to this value when a tool with an info-mode is activated. Toggle with SHIFT+W.':
-                    '如果启用了“使用持久白色”，则在启用带有信息模式的工具时，信息模式白色设置将被设置为此值 -快捷键: SHIFT+W',
-                'When a tool system with a length measurement is selected, use \'units\' instead. Toggle with ALT+U.':
-                    '当选择具有长度测量的工具系统时，请改用“单位”代替 -快捷键: ALT+U',
-
-                'When enabled, freezes the visual time of day. \'Day/Night Visuals\' must be on.':
-                    '启用后,冻结视觉时间。必须打开“日夜效果”',
-
-                'Override the visual time of day. \'Day/Night Visuals\' must be on. If golden hour goes to midnight the map is missing settings.':
-                    '覆盖视觉时间。必须打开“日夜效果”',
-
-                'Override the weather': '覆盖天气',
-
-                'Provides custom zone colour options that can be cycled with a key shortcut. Toggle with ALT+Z.': '提供可以使用快捷键循环的自定义区域颜色选项。',
-                'Zone cell borders will adjust to be more visible when there is snow coverage.': '当有积雪覆盖时，区域单元边界将调整为更加可见。',
-                'Change the transparency of non-empty zone cells.': '更改非空区域单元的透明度。',
-                'Change the border transparency of non-empty zone cells.': '更改非空区域单元的边界透明度。',
-                'Change the transparency of empty zone cells.': '更改空区域单元的透明度。',
-                'Change the border transparency of empty zone cells.': '更改空区域单元的边界透明度。',
-                'Select a different colour mode, you can cycle these with the keys SHIFT+Z.': '选择不同的颜色模式 -快捷键 SHIFT+Z',
-                'Modify Residential zone colours': '修改住宅区颜色',
-                'Modify Commercial zone colours': '修改商业区颜色',
-                'Modify Office zone colours': '修改办公区颜色',
-                'Select a theme to edit': '选择要编辑的主题',
-                'Select a base theme, main accent colour and generate a theme.': '选择基本主题、主要强调颜色并生成主题。',
-                'This mod was developed by the optimus-code and the Cities2Modding community.': '此模组由optimus-code和Cities2Modding社区开发。',
-                'Modify Industrial zone colours': '修改工业区颜色'
-            },
-                [传统风味.选项], {//
-                'Off': '关闭',
-                'Day': '白天',
-                'Golden Hour': '黄金时段',
-                'Night': '夜晚',
-                'Sun': '晴朗',
-                'Overcast': '阴天',
-                'Rain': '雨天',
-                'Snow': '雪天'
-            },
-                [传统风味.按钮], {//
-                'Reset to default': '重置至默认',
-                'Set': '设置',
-                'to vanilla colours': '到原版颜色',
-                'Regenerate icons': '重新生成图标',
-                'Game restart required': '需要重新启动游戏',
-                'Reset': '重置'
-            },
-                [MAIN.下拉框.值, MAIN.下拉框.标签, 传统风味.按钮], {//
-                'Default Colours': '默认颜色',
-                'Deuteranopia': '绿色盲',
-                'Protanopia': '红色盲',
-                'Tritanopia': '蓝色盲',
-                'Use selected theme': '使用选定的主题',
-                'Default': '默认',
-                'Bright Blue': '亮蓝',
-                'Dark Grey Orange': '深灰橙',
-                'LF - Default': 'LF - 默认',
-                'LF - High Contrast': 'LF - 高对比',
-                'LF - Hot Pink': 'LF - 热粉',
-                'LF - Toxic Green': 'LF - 有毒绿',
-                'LF - Mocha': 'LF - 摩卡',
-                'LF - Peachy Ocean': 'LF - 桃子海洋',
-                'LF - Dark Red': 'LF - 深红',
-                'LF - Cool Blue': 'LF - 冷蓝',
-                'LF - Dark Teal': 'LF - 深青'
-            },
-                [传统风味.标签], {//
-                'Residential Low': '低密度住宅',
-                'Residential Medium': '中密度住宅',
-                'Residential Medium Row': '中密度联排住宅',
-                'Residential LowRent': '廉租公寓',
-                'Residential High': '高密度住宅',
-                'Residential Mixed': '混合型住宅',
-                'Commercial High': '高密度商业',
-                'Commercial Low': '低密度商业',
-                'Office High': '高密度办公',
-                'Office Low': '低密度办公',
-                'Primary Accent': '主要强调',
-                'Background Accent': '背景强调',
-                'Focused Color Dark': '聚焦颜色深',
-                'Focused Color': '聚焦颜色',
-
-                'Hover': '悬停',
-                'Pressed': '按下',
-                'Focused': '聚焦',
-                'Accent Color Dark': '强调颜色深',
-                'Accent Color Normal': '强调颜色正常',
-                'Accent Color Lighter': '强调颜色较亮',
-                'Accent Color Light': '强调颜色浅',
-
-                'Custom Panel Text Color': '自定义面板文本颜色',
-                'Panel Color Normal': '面板颜色正常',
-                'Pause Panel Color Dark': '暂停面板颜色深',
-                'Panel Color Dark Active': '面板颜色深活动',
-                'Panel Color Dark': '面板颜色深',
-
-                'Section Header Locked Color': '部分标题锁定颜色',
-                'Section Header Color Light': '部分标题颜色浅',
-                'Section Header Color': '部分标题颜色',
-
-                'Section Background Color Light': '部分背景颜色浅',
-                'Section Background Color': '部分背景颜色',
-                'Section Background Locked Color': '部分背景锁定颜色',
-                'Section Border Color': '部分边框颜色',
-
-                'Selected Text Color Dimmest': '选定文本颜色最暗',
-                'Selected Text Color Dimmer': '选定文本颜色较暗',
-                'Selected Text Color Dim': '选定文本颜色中等',
-                'Selected Text Color': '选定文本颜色',
-                'Selected Color Dark': '选定颜色深',
-                'Selected Color Active': '选定颜色活动',
-                'Selected Color': '选定颜色',
-
-                'Normal Text Color Dimmest': '普通文本颜色最暗',
-                'Normal Text Color Dimmer': '普通文本颜色较暗',
-                'Normal Text Color Dim': '普通文本颜色中等',
-                'Normal Text Color Dark Dimmer': '普通文本颜色深较暗',
-                'Normal Text Color Dark Dimmest': '普通文本颜色深最暗',
-                'Normal Text Color Dark Dim': '普通文本颜色深暗',
-                'Normal Text Color Dark': '普通文本颜色深',
-                'Normal Text Color': '普通文本颜色',
-
-                'Menu Panel1': '菜单面板1',
-                'Menu Panel2': '菜单面板2',
-                'Menu Title Normal': '菜单标题正常',
-                'Menu Text1 Normal': '菜单文本1正常',
-                'Menu Text1 Inverted': '菜单文本1反色',
-                'Menu Text1 Disabled': '菜单文本1禁用',
-                'Menu Text2 Normal': '菜单文本2正常',
-                'Menu Text2 Inverted': '菜单文本2反色',
-                'Menu Control Border': '菜单控件边框',
-
-                'Custom Chirper Panel Text Color': '自定义Chirper面板文本颜色',
-                'Custom Chirper Panel Color': '自定义Chirper面板颜色',
-                'Custom Chirper Item Text Color': '自定义Chirper项目文本颜色',
-                'Custom Chirper Item Color': '自定义Chirper项目颜色',
-                'Custom Tab Text Color': '自定义选项卡文本颜色',
-                'Custom Tab Selected Text Color': '自定义选项卡选定文本颜色',
-
-                'Positive Color': '正向颜色',
-                'Warning Color': '警告颜色',
-                'Negative Color': '负向颜色',
-
-                'Industrial Agriculture': '工业农业',
-                'Industrial Forestry': '工业林业',
-                'Industrial Manufacturing': '工业制造',
-                'Industrial Oil': '工业石油',
-                'Industrial Ore': '工业矿石'
             }
             ),
             限速模组: RE(
@@ -1507,19 +1244,10 @@ function replaceContent() {
                 'Image Overlay': '图像叠加'
             },
                 [MAIN.设置.标签, MAIN.设置.标题], {
-                'Overlay file to use': '覆盖图像文件',//
-                'Overlay size': '覆盖大小',//
-                'Overlay transparency': '覆盖透明度',//
                 'Overlay X-position': '图像X坐标',
                 'Overlay Z-position': "图像Y坐标"
             },
                 [MAIN.设置.描述], {
-                'Select an overlay file to use.': '选择要使用的叠加文件。',//
-                'Refreshes the list of available overlay files from the \'Overlays\' directory in the Cities: Skylines II user settings directory.': '刷新来自%LocalAppData%Low/olossal Order/Cities Skylines II中的“Overlays”文件夹中图像列表。',//
-                'The size of the overlay image projection, in meters.': '覆盖图像投影的大小，以米为单位。',//
-                'This can also be changed in-game using the minus and equals keys.': '这也可以在游戏中使用减号和等号键进行更改。',//
-                'Resets the overlay size to the default playable map size': '将覆盖大小重置为默认的可玩地图大小',//
-                'The transparency of the image; 0% is fully opaque and 100% is fully transparent (invisible).': '图像的透明度；0％是完全不透明的，而100％是完全透明的（不可见）。',//
                 'The X (east-west) coordinate of the center of the overlay image projection, in meters.  This can also be changed in-game using the left and right arrow keys while holding down control (for 1m increments) or shift (for 10m increments).': '覆盖图像投影中心的X坐标（东西方向），以米为单位。这也可以在游戏中使用左右箭头键进行更改，同时按住Control键（以1m为增量）或Shift键（以10m为增量）。',
                 'The Z (north-south) coordinate of the center of the overlay image projection, in meters.  This can also be changed in-game using the up and down arrow keys while holding down control (for 1m increments) or shift (for 10m increments).': '覆盖图像投影中心的Z坐标（南北方向），以米为单位。这也可以在游戏中使用上下箭头键进行更改，同时按住Control键（以1m为增量）或Shift键（以10m为增量）',
                 'Resets the overlay position to the center of the map.': '将覆盖位置重置为地图中心。'
@@ -1528,8 +1256,6 @@ function replaceContent() {
                 'None': '无',
             },
                 [MAIN.按钮, MAIN.设置.标题], {
-                'Refresh file list': '刷新文件列表',//
-                'Reset overlay size': '重置覆盖大小',//
                 'Reset overlay position': "重置覆盖位置"
             }
             ),
@@ -1545,42 +1271,42 @@ function replaceContent() {
                 'Show Tooltip': '显示工具提示框',
                 'Flaming Chirper': '燃烧小鸟',
                 'Tool Icon': '工具图标',
-                    'Prevent Accidental Prop Culling': '防止意外的道具遗失',
-                    'Prop Refresh Frequency': '道具刷新频率',
-                    },
+                'Prevent Accidental Prop Culling': '防止意外的道具遗失',
+                'Prop Refresh Frequency': '道具刷新频率',
+            },
                 [MAIN.设置.描述], {
                 'With this option enabled the Bulldoze Tool will always have anarchy enabled.': '启用此选项后，清障工具将始终启用无碰撞状态。',
                 'With this option enabled a tooltip with Ⓐ will be shown when Anarchy is active for appropriate tools.': '启用此选项后，对适当的工具启用无碰撞时将显示带有Ⓐ的工具提示。',
                 'With this option enabled the Chirper will be on fire when Anarchy is active for appropriate tools. Image Credit: Bad Peanut.': '微谈小鸟 将着火。 图片来源：Bad Peanut。  ',
                 'With this option enabled a icon row with a single button for Anarchy will show up when using appropriate tools.': '启用此选项后，使用适当的工具时将显示一个包含单个无碰撞按  钮的图标显示。',
-                 'Upon confirmation this will reset the settings for Anarchy mod.': '确认后，这将重置 无碰撞模组 的设置。',
-                 'This will routinely trigger a graphical refresh to props placed with Anarchy that have been culled to prevent accidental culling of props. This affects performance.': '这将定期触发对使用 无碰撞 放置的被剔除的道具进行图形刷新，以防止意外的道具遗失。这会影响性能。',
-                 'This is number of frames between graphical refreshes to props placed with Anarchy to prevent accidental culling. Higher numbers will have better performance, but longer possible time that props may be missing.': '这是在 Anarchy 下放置的道具之间的图形刷新之间的帧数，以防止意外的剔除。数字越大，性能越好，但可能遗失道具的时间越长。',
-                 "If props placed with Anarchy have been accidently culled, you can press this button to bring them back now. This doesn't negatively effect performance.": '如果使用 无碰撞 放置的道具被意外剔除，您可以按下此按钮立即将它们恢复。这不会对性能产生负面影响。'
+                'Upon confirmation this will reset the settings for Anarchy mod.': '确认后，这将重置 无碰撞模组 的设置。',
+                'This will routinely trigger a graphical refresh to props placed with Anarchy that have been culled to prevent accidental culling of props. This affects performance.': '这将定期触发对使用 无碰撞 放置的被剔除的道具进行图形刷新，以防止意外的道具遗失。这会影响性能。',
+                'This is number of frames between graphical refreshes to props placed with Anarchy to prevent accidental culling. Higher numbers will have better performance, but longer possible time that props may be missing.': '这是在 Anarchy 下放置的道具之间的图形刷新之间的帧数，以防止意外的剔除。数字越大，性能越好，但可能遗失道具的时间越长。',
+                "If props placed with Anarchy have been accidently culled, you can press this button to bring them back now. This doesn't negatively effect performance.": '如果使用 无碰撞 放置的道具被意外剔除，您可以按下此按钮立即将它们恢复。这不会对性能产生负面影响。'
             },
                 [MAIN.按钮, MAIN.设置.标题], {
-                    'Reset Anarchy Settings': '重置 无碰撞模组 设置',
-                    'Refresh Props': '刷新道具',
+                'Reset Anarchy Settings': '重置 无碰撞模组 设置',
+                'Refresh Props': '刷新道具',
             },
                 [MAIN.悬浮框.标题], {
-                    'Anarchy': '无碰撞',
-                    'Gameplay Manipulation': '游戏中操纵',
-                    'Bypass Confirmation': '绕过确认',
-                    'Target Markers': '标记',
-                    'Target Surfaces': '地面/表面'
+                'Anarchy': '无碰撞',
+                'Gameplay Manipulation': '游戏中操纵',
+                'Bypass Confirmation': '绕过确认',
+                'Target Markers': '标记',
+                'Target Surfaces': '地面/表面'
             },
                 [MAIN.悬浮框.内容], {
-                    "Disables error checks for tools and does not display errors. When applicable, you can place vegetation and props (with DevUI 'Add Object' menu) overlapping or inside the boundaries of other objects and close together.":
-                        '禁用工具错误检查，不显示错误。在适用的情况下，您可以将植被和道具（使用DevUI的“添加对象”菜单）放置在其他对象的边界重叠或内部并靠近一起。',
-                    "Allows you to use the bulldozer on moving objects such as vehicles or cims.":
-                        '许在移动对象（如车辆或市民）上使用推土机。',
-                    "Disables the prompt for whether you are sure you want to demolish a building.":
-                        '禁用是否确定要拆除建筑物的提示。',
-                    "Shows and EXCLUSIVELY targets markers and invisible roads. With this and anarchy enabled you can demolish invisible roads, but SAVE FIRST! You cannot demolish invisible roads within buildings.":
-                        '同时启用这个和无碰撞时，您可以拆除不可见道路，但记得先保存游戏！您不能在建筑物内拆除不可见的道路。',
-                    "Makes the bulldozer EXCLUSIVELY target surfaces so you can remove them in one click. With Anarchy on you can bulldoze surfaces within buidings. You must turn this off to bulldoze anything else.":
-                        '启用无碰撞后，您可以在建筑物内使用推土机清理地面/表面。您必须关闭此选项以回归正常推土机功能。'
-                }
+                "Disables error checks for tools and does not display errors. When applicable, you can place vegetation and props (with DevUI 'Add Object' menu) overlapping or inside the boundaries of other objects and close together.":
+                    '禁用工具错误检查，不显示错误。在适用的情况下，您可以将植被和道具（使用DevUI的“添加对象”菜单）放置在其他对象的边界重叠或内部并靠近一起。',
+                "Allows you to use the bulldozer on moving objects such as vehicles or cims.":
+                    '许在移动对象（如车辆或市民）上使用推土机。',
+                "Disables the prompt for whether you are sure you want to demolish a building.":
+                    '禁用是否确定要拆除建筑物的提示。',
+                "Shows and EXCLUSIVELY targets markers and invisible roads. With this and anarchy enabled you can demolish invisible roads, but SAVE FIRST! You cannot demolish invisible roads within buildings.":
+                    '同时启用这个和无碰撞时，您可以拆除不可见道路，但记得先保存游戏！您不能在建筑物内拆除不可见的道路。',
+                "Makes the bulldozer EXCLUSIVELY target surfaces so you can remove them in one click. With Anarchy on you can bulldoze surfaces within buidings. You must turn this off to bulldoze anything else.":
+                    '启用无碰撞后，您可以在建筑物内使用推土机清理地面/表面。您必须关闭此选项以回归正常推土机功能。'
+            }
 
             ),
             建筑尺寸自定义: RE(
@@ -1628,95 +1354,165 @@ function replaceContent() {
             ),
             无限刷子尺寸: RE(
                 [MAIN.设置.选项], {
-                'Brush Size Unlimiter': '无限刷子尺寸'
-            },
+                    'Brush Size Unlimiter': '无限刷子尺寸'
+                },
                 [MAIN.设置.标签, MAIN.设置.标题], {
-                'Maximum Brush Size': '最大刷子大小',
-                'Hide Object Placement Preview With Large Brush Sizes': '巨型刷子下隐藏预览',
-            },
+                    'Maximum Brush Size': '最大刷子大小',
+                    'Hide Object Placement Preview With Large Brush Sizes': '巨型刷子下隐藏预览',
+                },
                 [rif({ match: 'inc', full: true }).class('option-page_CW8.option-section_VzQ').class('info-column_uQ0').class('info-description_wwd')], {
-                'Sets the maximum size the brush can be set to in the game/dev UI.':
+                    'Sets the maximum size the brush can be set to in the game/dev UI.':
                     '设置最大刷子大小限制  注意:刷子越大，性能消耗越高',
 
-                'Warning: Disabling this will make large object brushes with high strengths extremely laggy.':
+                    'Warning: Disabling this will make large object brushes with high strengths extremely laggy.':
                     '-启用此选项可大幅提高在使用大型对象刷子(≥2500大小)时的性能，通过在悬停时临时将刷子强度设置为0  警告：禁用此选项将使具有高强度的大型对象刷子非常卡顿。  如果存在兼容性问题，请禁用',
-            }
+                }
             ),
             额外景观工具: RE(
                 [MAIN.工具框.标签], {
-                    'Brush': '笔刷',
-                    'Brush Rotation': '笔刷角度'
+                'Brush': '笔刷',
+                'Brush Rotation': '笔刷角度'
             },
                 [MAIN.工具框.值], {
-                    'Custom 01': '自定义 01',
-                    'Mountain 01': '山脉 01',
-                    'Mountain 02': '山脉 02',
-                    'Mountain 03': '山脉 03',
-                    'Default Brush': '默认',
-                    'Mountain02Brush': '山脉 02',
-                    'TriangleBrush': '三角',
-                    'Mountain01Brush': '山脉 01',
-                    'Mesa01Brush': '台地 01',
-                    'RectangleBrush': '矩形',
-                    'PeakBrush': '峰',
-                    'TendrilBrush01': '卷曲 01',
-                    'TendrilBrush02': '卷曲 02',
-                    'MountainsBrush': '山脉',
-                    'Mountain03Brush': '山脉 03',
-                    'Mountain04Brush': '山脉 04',
-                    'TendrilBrush03': '卷曲 03',
-                    'River01Brush': '河流 01'
+                'Custom 01': '自定义 01',
+                'Mountain 01': '山脉 01',
+                'Mountain 02': '山脉 02',
+                'Mountain 03': '山脉 03',
+                'Default Brush': '默认',
+                'Mountain02Brush': '山脉 02',
+                'TriangleBrush': '三角',
+                'Mountain01Brush': '山脉 01',
+                'Mesa01Brush': '台地 01',
+                'RectangleBrush': '矩形',
+                'PeakBrush': '峰',
+                'TendrilBrush01': '卷曲 01',
+                'TendrilBrush02': '卷曲 02',
+                'MountainsBrush': '山脉',
+                'Mountain03Brush': '山脉 03',
+                'Mountain04Brush': '山脉 04',
+                'TendrilBrush03': '卷曲 03',
+                'River01Brush': '河流 01'
             },
                 [MAIN.工具栏.资产详情.标题], {
-                    'SubServices.NAME[Surfaces]':'地面'
+                'SubServices.NAME[Surfaces]': '地面'
             },
                 [MAIN.工具栏.资产详情.描述], {
-                    'Assets.SUB_SERVICE_DESCRIPTION[Surfaces]':'一些地面/地表,无碰撞体积'
+                'Assets.SUB_SERVICE_DESCRIPTION[Surfaces]': '一些地面/地表,无碰撞体积'
 
-                }
+            }
             ),
             扩展热键: RE(
                 [HOOKUI.顶栏.名称], {
-                    'ExtendedHotkeys':'扩展热键'
+                'ExtendedHotkeys': '扩展热键'
             },
                 [HOOKUI.面板.标题], {
-                    'Extended Hotkeys':'扩展热键'
+                'Extended Hotkeys': '扩展热键'
             },
                 [HOOKUI.面板.头], {
-                    'General': '常规',
-                    'Mouse Wheel': '鼠标滚轮',
-                    'Hotkeys': '快捷键'
+                'General': '常规',
+                'Mouse Wheel': '鼠标滚轮',
+                'Hotkeys': '快捷键'
             },
                 [HOOKUI.面板.头描述], {
 
-                    'Extended actions with your mouse wheel while in net tool placing roads.': '在网工具放置道路时，使用鼠标滚轮进行扩展操作。',
-                    'Awesome actions with your keyboard.': '使用键盘进行出色的操作。'
-                 },
+                'Extended actions with your mouse wheel while in net tool placing roads.': '在网工具放置道路时，使用鼠标滚轮进行扩展操作。',
+                'Awesome actions with your keyboard.': '使用键盘进行出色的操作。'
+            },
                 [HOOKUI.面板.项目], {
-                    '升降步进卷轴': '高度阶段',
-                    '海拔重置':'高度重置',
-                    'Scroll elevation step level.': '高度阶段调整。',
-                    'Tool Modes': '工具模式',
-                    'Straight': '直线',
-                    'Curve': '曲线',
-                    'Complex Curve': '复杂曲线',
-                    'Continuous': '连续曲线',
-                    'Grid': '网格'
-                }
+                '升降步进卷轴': '高度阶段',
+                '海拔重置': '高度重置',
+                'Scroll elevation step level.': '高度阶段调整。',
+                'Tool Modes': '工具模式',
+                'Straight': '直线',
+                'Curve': '曲线',
+                'Complex Curve': '复杂曲线',
+                'Continuous': '连续曲线',
+                'Grid': '网格'
+            }
             ),
             扩展提示框: RE(
                 [HOOKUI.顶栏.名称], {
                 'ExtendedTooltip': '扩展提示框'
             },
                 [HOOKUI.面板.标题], {
-                    'Extended Tooltip': '扩展提示框'
+                'Extended Tooltip': '扩展提示框'
             },
-            [HOOKUI.面板.项目], {
+                [HOOKUI.面板.项目], {
                 '无政府状态': '无碰撞状态',
-                '如果启用了无政府模式，则会显示一个指示器。':'如果启用了无碰撞，则会显示一个指示器。',
+                '如果启用了无政府模式，则会显示一个指示器。': '如果启用了无碰撞，则会显示一个指示器。',
+            }
+            ),
+            随处开采: RE(
+                [MAIN.设置.选项], {
+                    'Extract Anywhere': '随处开采'
+                },
+                [MAIN.设置.标签, MAIN.设置.标题],{
+                    "Can all extractors extract anywhere?":'可随处开采',
+                    "Extraction radius multiplier": "采集半径倍增器",
+                    'Textile Fibres': '棉花',
+                    'Grain': '粮食',
+                    'Vegetables': '蔬菜',
+                    'Oil': '石油',
+                    'Coal': '煤炭',
+                    'Ore': '矿石'
+                },
+                [MAIN.设置.描述],{
+                    "Toggle all extractors' abilities to extract resources without the need for a natural resource deposit.": 
+                    '切换所有开采专门产业无需自然资源即可提取资源的能力。',
+
+                    'Set the multiplier for the area sizes of all extractors.': 
+                    '设置所有开采专门产业区域大小倍增。',
+
+                    'Toggle whether or not textile fibres can be extracted without requiring fertile land. Turning this on means that extraction does not require fertile land.':
+                    '切换棉花是否可以在不需要沃土的情况下种植。启用此选项表示不需要沃土。',
+
+                    'Toggle whether or not grain can be extracted without requiring fertile land. Turning this on means that extraction does not require fertile land.':
+                    '切换谷物是否可以在不需要沃土的情况下种植。启用此选项表示不需要沃土。',
+
+                    'Toggle whether or not vegetables can be extracted without requiring fertile land. Turning this on means that extraction does not require fertile land.':
+                    '切换蔬菜是否可以在不需要沃土的情况下种植。启用此选项表示不需要沃土。',
+
+                    "Set the multiplier for the area size of the extractors. The default is 1 (base area size is 300). This will affect the following resource extractors: textile fibres, grain, livestock, vegetables.":
+                    '设置专门产业区域大小的倍增。默认值为1（基础区域大小为300）。这将影响以下专门产业：棉花、谷物、牲畜、蔬菜。',
+
+                    "Set the multiplier for the area size of the extractors. The default is 1 (base area size is 400). This will affect the following resource extractors: forestry.":
+                    '设置专门产业区域大小的倍增。默认值为1（基础区域大小为400）。这将影响以下专门产业：林业。',
+
+                    'Toggle whether or not oil can be extracted without requiring an oil deposit. Turning this on means that extraction does not require an oil deposit.':
+                    '切换是否可以在不需要石油资源的情况下提取石油。启用此选项表示不需要石油资源。',
+
+                    'Set the multiplier for the area size of the extractors. The default is 1 (base area size is 300). This will affect the following resource extractors: oil.':
+                    '设置专门产业区域大小的倍增。默认值为1（基础区域大小为300）。这将影响以下专门产业：石油。',
+
+                    'Toggle whether or not coal can be extracted without requiring an ore deposit. Turning this on means that extraction does not require an ore deposit.':
+                    '切换是否可以在不需要矿脉的情况下开采煤炭。启用此选项表示不需要矿脉。',
+
+                    'Toggle whether or not ore can be extracted without requiring an ore deposit. Turning this on means that extraction does not require an ore deposit.':
+                    '切换是否可以在不需要矿脉的情况下开采矿石。启用此选项表示不需要矿脉。',
+
+                    'Set the multiplier for the area size of the extractors. The default is 1 (base area size is 400). This will affect the following resource extractors: coal, ore, stone.':
+                    '设置提取器区域大小的倍增器。默认值为1（基础区域大小为400）。这将影响以下专门产业：煤炭、矿石、石头。'
+
+                },
+                [MAIN.按钮, MAIN.设置.标题], {
+                    'Reset to default': '重置为默认'
+                },
+                [MAIN.设置.TAB],{
+                    'General': '常规',
+                    'Fertile Land': '沃土',
+                    'Forest': '林业',
+                    'Oil': '石油',
+                    'Ore': '矿石'
+                },
+                [MAIN.设置.分类],{
+                    'Extract Anywhere': '随处开采'
                 }
+
+
             )
         }
+
+
 
         for (const [ObjName, ObjReItems] of Object.entries(REPLACE_ITEM_NEW)) {
             for (const [ReFunc, ReStrs] of ObjReItems) {
@@ -1739,4 +1535,5 @@ function replaceContent() {
         }
     }
 }
-setInterval(replaceContent, 100);
+setInterval(replaceContent, 150);
+//REPLACE_ITEMS_END//
