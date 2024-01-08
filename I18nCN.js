@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.4.0//
+//version=1.4.1//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1091,7 +1091,8 @@ function replaceContent() {
                 'Line Tool': '条形工具',//
             },
                 [MAIN.工具框.标签], {
-                'Options': '设置'
+                'Options': '设置',
+                'Rotation': '旋转'
             },
                 [MAIN.悬浮框.标题], {
                 'Single item': '放置单个物件'
@@ -1273,6 +1274,7 @@ function replaceContent() {
                 'Tool Icon': '工具图标',
                 'Prevent Accidental Prop Culling': '防止意外的道具遗失',
                 'Prop Refresh Frequency': '道具刷新频率',
+                'Allow Placing Multiple Unique Buildings':'允许放置多个独特建筑'
             },
                 [MAIN.设置.描述], {
                 'With this option enabled the Bulldoze Tool will always have anarchy enabled.': '启用此选项后，清障工具将始终启用无碰撞状态。',
@@ -1282,7 +1284,8 @@ function replaceContent() {
                 'Upon confirmation this will reset the settings for Anarchy mod.': '确认后，这将重置 无碰撞模组 的设置。',
                 'This will routinely trigger a graphical refresh to props placed with Anarchy that have been culled to prevent accidental culling of props. This affects performance.': '这将定期触发对使用 无碰撞 放置的被剔除的道具进行图形刷新，以防止意外的道具遗失。这会影响性能。',
                 'This is number of frames between graphical refreshes to props placed with Anarchy to prevent accidental culling. Higher numbers will have better performance, but longer possible time that props may be missing.': '这是在 Anarchy 下放置的道具之间的图形刷新之间的帧数，以防止意外的剔除。数字越大，性能越好，但可能遗失道具的时间越长。',
-                "If props placed with Anarchy have been accidently culled, you can press this button to bring them back now. This doesn't negatively effect performance.": '如果使用 无碰撞 放置的道具被意外剔除，您可以按下此按钮立即将它们恢复。这不会对性能产生负面影响。'
+                "If props placed with Anarchy have been accidently culled, you can press this button to bring them back now. This doesn't negatively effect performance.": '如果使用 无碰撞 放置的道具被意外剔除，您可以按下此按钮立即将它们恢复。这不会对性能产生负面影响。',
+                'This allows you to place multiple copies of unique buildings using the normal UI menu with or without Anarchy enabled. The effects of these buildings stack!':'这允许您使用正常的 UI 菜单放置多个独特建筑，无论是否启用 Anarchy。这些建筑的效果叠加！'
             },
                 [MAIN.按钮, MAIN.设置.标题], {
                 'Reset Anarchy Settings': '重置 无碰撞模组 设置',
