@@ -1558,28 +1558,6 @@ function replaceContent() {
 
 }
 
-const Error = async (errText) => {
-    function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
-    function click(em) {
-        const allProps = Object.keys(em);
-        for (const prop of allProps) {
-            if (prop.startsWith('__reactProps')) {
-                try { em[prop].onClick() } catch { }
-            }
-        }
-    }
-    let clearTime = 0
-    while (clearTime < 20) {
-        await delay(100)
-        try {
-            let error = document.querySelectorAll('.panel_YqS.error-dialog_iaV')[0]
-            if (error && error.innerHTML.includes(errText)) {
-                Array.from(document.querySelectorAll('.button_HeP.button_gJo')).filter(item => (item.innerHTML.includes('继续'))).forEach(e => { click(e) })
-            }
-        } catch { }
-        clearTime +=1
-    }
-}
 
 setInterval(replaceContent, 150);
 //REPLACE_ITEMS_END//
