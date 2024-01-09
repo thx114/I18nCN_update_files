@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.4.1//
+//version=1.4.2//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1512,7 +1512,22 @@ function replaceContent() {
                 }
 
 
+            ),
+            报错翻译: RE(
+                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
+                    [e_="Can not write to queue when system isn't running"]:e_+"<p>可能的报错模组: </p> <p>·信息隐现 InfoLoom</p>",
+                    [e_='URL: coui://linetool']:e_+"<p>可能的报错模组: </p> <p>·条形工具 LineTool</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
+                    [e_='System update error during Deserialize']:e_+"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p><p></p><p>原因: </p> <p>反序列化过程中的系统更新错误</p>",
+                    [e_='URL: coui://uil/Colored/AnarchyChirper.svg']:e_+"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
+                    [e_='URL: coui://gameui/Media/Menu/OverlayBackground.png']:e_+"<p>可能的报错模组: </p> <p>·未知</p><p></p><p>原因: </p> <p>无法加载背景图片</p>",
+                    [e_='System update error during GameSimulation System.ArgumentException: Allocator index into TryFunction delegate table exceeds maximum.']:e_+"<p>可能的报错模组: </p> <p>·原版</p><p></p><p>原因: </p> <p>模拟异常-实体内存分配异常</p>",
+                    'Anarchy.svg':"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>"
+                },
+                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('content_gqa')],{
+                    'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
+                }
             )
+            
         }
 
 
@@ -1522,6 +1537,9 @@ function replaceContent() {
                 ReFunc.forEach(func => func.REPLACE(ReStrs))
             }
         }
+
+        
+
     } catch (err) { addinfo += err }
     let time2 = new Date().getTime()
     if (window.__LOGGING__ && document.getElementsByClassName('fps-display_t30').length) {
@@ -1537,6 +1555,31 @@ function replaceContent() {
 
         }
     }
+
 }
+
+const Error = async (errText) => {
+    function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    function click(em) {
+        const allProps = Object.keys(em);
+        for (const prop of allProps) {
+            if (prop.startsWith('__reactProps')) {
+                try { em[prop].onClick() } catch { }
+            }
+        }
+    }
+    let clearTime = 0
+    while (clearTime < 20) {
+        await delay(100)
+        try {
+            let error = document.querySelectorAll('.panel_YqS.error-dialog_iaV')[0]
+            if (error && error.innerHTML.includes(errText)) {
+                Array.from(document.querySelectorAll('.button_HeP.button_gJo')).filter(item => (item.innerHTML.includes('继续'))).forEach(e => { click(e) })
+            }
+        } catch { }
+        clearTime +=1
+    }
+}
+
 setInterval(replaceContent, 150);
 //REPLACE_ITEMS_END//
