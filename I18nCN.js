@@ -1531,11 +1531,11 @@ function replaceContent() {
                 [rif({match:'inc',mode:'html',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
                     'EU_':'欧洲',
                     'NA_':'北美',
+                    'ResidentialLowRent':'廉租公寓',
                     'ResidentialLow':'低密度住宅 ',
                     'ResidentialMed':'中密度住宅 ',
                     'ResidentialHigh':'高密度住宅 ',
                     'ResidentialRow':'中密度联排住宅',
-                    'ResidentialLowRent':'廉租公寓',
                     'MixedRight':'混合型住宅',
                     'CommercialLow':'低密度商业',
                     'CommercialHigh':'高密度商业',
