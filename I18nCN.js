@@ -1527,7 +1527,7 @@ function replaceContent() {
                     'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
                 }
             ),
-            RICO:RE(
+            RICO: RE(
                 [rif({match:'inc',mode:'html',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
                     'EU_':'欧洲',
                     'NA_':'北美',
@@ -1549,8 +1549,7 @@ function replaceContent() {
 
                     '_L':' 等级',
                     '_ploppable':'',
-                    'Assets.NAME[':'',
-                    ']':''
+                    'Assets.NAME':''
 
                 }
                 [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
@@ -1566,7 +1565,6 @@ function replaceContent() {
                     'Office High Ploppable':'高密度办公',
                     'Manufacturing Ploppable':'工厂',
                     'Warehouse Ploppable':'仓库'
-
                 }
             )
             
