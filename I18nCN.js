@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.4.2//
+//version=1.4.3//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1525,6 +1525,48 @@ function replaceContent() {
                 },
                 [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('content_gqa')],{
                     'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
+                }
+            ),
+            RICO:RE(
+                [rif({match:'inc',mode:'html',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
+                    'EU_':'欧洲',
+                    'NA_':'北美',
+                    'ResidentialLow':'低密度住宅 ',
+                    'ResidentialMed':'中密度住宅 ',
+                    'ResidentialHigh':'高密度住宅 ',
+                    'ResidentialRow':'中密度联排住宅',
+                    'ResidentialLowRent':'廉租公寓',
+                    'MixedRight':'混合型住宅',
+                    'CommercialLow':'低密度商业',
+                    'CommercialHigh':'高密度商业',
+                    'Commercial':'商业',
+                    'GasStation':'加油站',
+                    'Motel':"旅馆",
+                    'OfficeLow':'低密度办公',
+                    'OfficeHigh':'高密度办公',
+                    'IndustrialManufacturingWarehouse':'仓库',
+                    'IndustrialManufacturing':'工厂',
+
+                    '_L':' 等级',
+                    '_ploppable':'',
+                    'Assets.NAME[':'',
+                    ']':''
+
+                }
+                [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
+                    'Residential Low Ploppable':'低密度住宅',
+                    'Residential Med Ploppable':'中密度住宅',
+                    'Residential High Ploppable':'高密度住宅',
+                    'Residential Row Ploppable':'中密度联排住宅',
+                    'Residential Low Rent Ploppable':'廉租公寓',
+                    'Mixed Ploppable':'混合型住宅',
+                    'Commercial Low Ploppable':'低密度商业',
+                    'Commercial High Ploppable':'高密度商业',
+                    'Office Low Ploppable':'低密度办公',
+                    'Office High Ploppable':'高密度办公',
+                    'Manufacturing Ploppable':'工厂',
+                    'Warehouse Ploppable':'仓库'
+
                 }
             )
             
