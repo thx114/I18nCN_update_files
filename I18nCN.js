@@ -1528,7 +1528,7 @@ function replaceContent() {
                     'Manufacturing Ploppable':'工厂',
                     'Warehouse Ploppable':'仓库'
                 },
-                [rif({match:'inc',mode:'html',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
+                [rif({match:'inc',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
                     'EU_':'欧洲',
                     'NA_':'北美',
                     'ResidentialLowRent':'廉租公寓',
