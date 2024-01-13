@@ -1537,7 +1537,7 @@ function replaceContent() {
                     '_ploppable':'',
                     'Assets.NAME':''
 
-                }
+                },
                 [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
                     'Residential Low Ploppable':'低密度住宅',
                     'Residential Med Ploppable':'中密度住宅',
