@@ -1514,6 +1514,20 @@ function replaceContent() {
 
             ),
             RICO: RE(
+                [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
+                    'Residential Low Ploppable':'低密度住宅',
+                    'Residential Med Ploppable':'中密度住宅',
+                    'Residential High Ploppable':'高密度住宅',
+                    'Residential Row Ploppable':'中密度联排住宅',
+                    'Residential Low Rent Ploppable':'廉租公寓',
+                    'Mixed Ploppable':'混合型住宅',
+                    'Commercial Low Ploppable':'低密度商业',
+                    'Commercial High Ploppable':'高密度商业',
+                    'Office Low Ploppable':'低密度办公',
+                    'Office High Ploppable':'高密度办公',
+                    'Manufacturing Ploppable':'工厂',
+                    'Warehouse Ploppable':'仓库'
+                },
                 [rif({match:'inc',mode:'html',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
                     'EU_':'欧洲',
                     'NA_':'北美',
@@ -1536,21 +1550,6 @@ function replaceContent() {
                     '_L':' 等级',
                     '_ploppable':'',
                     'Assets.NAME':''
-
-                },
-                [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
-                    'Residential Low Ploppable':'低密度住宅',
-                    'Residential Med Ploppable':'中密度住宅',
-                    'Residential High Ploppable':'高密度住宅',
-                    'Residential Row Ploppable':'中密度联排住宅',
-                    'Residential Low Rent Ploppable':'廉租公寓',
-                    'Mixed Ploppable':'混合型住宅',
-                    'Commercial Low Ploppable':'低密度商业',
-                    'Commercial High Ploppable':'高密度商业',
-                    'Office Low Ploppable':'低密度办公',
-                    'Office High Ploppable':'高密度办公',
-                    'Manufacturing Ploppable':'工厂',
-                    'Warehouse Ploppable':'仓库'
                 }
             ),
             报错翻译: RE(
