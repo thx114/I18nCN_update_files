@@ -1513,20 +1513,6 @@ function replaceContent() {
 
 
             ),
-            报错翻译: RE(
-                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
-                    [e_="Can not write to queue when system isn't running"]:e_+"<p>可能的报错模组: </p> <p>·信息隐现 InfoLoom</p>",
-                    [e_='URL: coui://linetool']:e_+"<p>可能的报错模组: </p> <p>·条形工具 LineTool</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
-                    [e_='System update error during Deserialize']:e_+"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p><p></p><p>原因: </p> <p>反序列化过程中的系统更新错误</p>",
-                    [e_='URL: coui://uil/Colored/AnarchyChirper.svg']:e_+"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
-                    [e_='URL: coui://gameui/Media/Menu/OverlayBackground.png']:e_+"<p>可能的报错模组: </p> <p>·未知</p><p></p><p>原因: </p> <p>无法加载背景图片</p>",
-                    [e_='System update error during GameSimulation System.ArgumentException: Allocator index into TryFunction delegate table exceeds maximum.']:e_+"<p>可能的报错模组: </p> <p>·原版</p><p></p><p>原因: </p> <p>模拟异常-实体内存分配异常</p>",
-                    'Anarchy.svg':"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>"
-                },
-                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('content_gqa')],{
-                    'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
-                }
-            ),
             RICO: RE(
                 [rif({match:'inc',mode:'html',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
                     'EU_':'欧洲',
@@ -1566,12 +1552,22 @@ function replaceContent() {
                     'Manufacturing Ploppable':'工厂',
                     'Warehouse Ploppable':'仓库'
                 }
-            )
-            
+            ),
+            报错翻译: RE(
+                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
+                    [e_="Can not write to queue when system isn't running"]:e_+"<p>可能的报错模组: </p> <p>·信息隐现 InfoLoom</p>",
+                    [e_='URL: coui://linetool']:e_+"<p>可能的报错模组: </p> <p>·条形工具 LineTool</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
+                    [e_='System update error during Deserialize']:e_+"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p><p></p><p>原因: </p> <p>反序列化过程中的系统更新错误</p>",
+                    [e_='URL: coui://uil/Colored/AnarchyChirper.svg']:e_+"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
+                    [e_='URL: coui://gameui/Media/Menu/OverlayBackground.png']:e_+"<p>可能的报错模组: </p> <p>·未知</p><p></p><p>原因: </p> <p>无法加载背景图片</p>",
+                    [e_='System update error during GameSimulation System.ArgumentException: Allocator index into TryFunction delegate table exceeds maximum.']:e_+"<p>可能的报错模组: </p> <p>·原版</p><p></p><p>原因: </p> <p>模拟异常-实体内存分配异常</p>",
+                    'Anarchy.svg':"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>"
+                },
+                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('content_gqa')],{
+                    'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
+                }
+            ),
         }
-
-
-
         for (const [ObjName, ObjReItems] of Object.entries(REPLACE_ITEM_NEW)) {
             for (const [ReFunc, ReStrs] of ObjReItems) {
                 ReFunc.forEach(func => func.REPLACE(ReStrs))
@@ -1580,7 +1576,7 @@ function replaceContent() {
 
         
 
-    } catch (err) { addinfo += err }
+    } catch (err) { addinfo += err}
     let time2 = new Date().getTime()
     if (window.__LOGGING__ && document.getElementsByClassName('fps-display_t30').length) {
         if (!document.getElementById('I18loginfo')) {
