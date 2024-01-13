@@ -1566,7 +1566,7 @@ function replaceContent() {
                 [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('content_gqa')],{
                     'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
                 }
-            ),
+            )
         }
         for (const [ObjName, ObjReItems] of Object.entries(REPLACE_ITEM_NEW)) {
             for (const [ReFunc, ReStrs] of ObjReItems) {
@@ -1576,7 +1576,7 @@ function replaceContent() {
 
         
 
-    } catch (err) { addinfo += err}
+    } catch (err) { addinfo += err ; console.log(err)}
     let time2 = new Date().getTime()
     if (window.__LOGGING__ && document.getElementsByClassName('fps-display_t30').length) {
         if (!document.getElementById('I18loginfo')) {
