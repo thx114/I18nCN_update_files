@@ -1583,10 +1583,10 @@ function replaceContent() {
 
                 },
                 [MAIN.下拉框.值,MAIN.下拉框.标签],{
-                    'Very low':'非常低',
+                    'Very Low':'非常低',
                     'Low':'低',
                     'High':'高',
-                    'Very high':'非常高'
+                    'Very High':'非常高'
                 },
                 [MAIN.设置.描述],{
                     "Reset 'CityPlayer Traffic Custom Mod' settings.":'重置城市玩家交通定制模组设置',
