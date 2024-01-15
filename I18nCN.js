@@ -1578,7 +1578,7 @@ function replaceContent() {
                     'CITIZEN TRANSPORTAION PREFERENCE CUSTOM MOD': '居民交通偏好定制',
                     'EXPERIMAENTAL MOD': '实验性模组'
                 },
-                [MAIN.设置.按钮, MAIN.设置.标题],{
+                [MAIN.按钮, MAIN.设置.标题],{
                     'RESET SETTINGS':'重置设置'
 
                 },
