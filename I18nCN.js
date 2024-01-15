@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.4.3//
+//version=1.5.0//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -921,7 +921,8 @@ function replaceContent() {
                 'Highly Educated': '极高学历',
                 'Well Educated': '高学历',
                 'Educated': '普通学历',
-                'TOTAL': '总计'
+                'TOTAL': '总计',
+                'Companies':'公司'
             },
                 [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').class('labels_L7Q.row_S2v').class('row_S2v').haveStyle('justify-content: center')], {
                 'Total': '总计',
@@ -938,7 +939,8 @@ function replaceContent() {
                 'Industry': '工业',
                 'Office': '办公',
                 'Employees': '员工',
-                'Open': '开放'
+                'Open': '招聘',
+                'Commute':'通勤'
             },
                 [rif().class('infoview-panel-section_RXJ').class('left_Lgw.row_S2v')], {
                 'BUILDING DEMAND': '建筑需求',
@@ -1551,6 +1553,71 @@ function replaceContent() {
                     '_ploppable':'',
                     'Assets.NAME':''
                 }
+            ),
+            交通自定义: RE(
+                [MAIN.设置.选项], {
+                    'CityPlayer Traffic Custom': '交通自定义'
+                },
+                [MAIN.设置.标签, MAIN.设置.标题],{
+                    'Use Rush Hour': '开启高峰时间',
+                    'Rush Hour Traffic Strength': '高峰交通强度',
+                    'Randomly Dummy Traffic - Car (On/Off)': '随机虚拟交通 - 汽车（开/关）',
+                    'Randomly Dummy Traffic - Train (On/Off)': '随机虚拟交通 - 火车（开/关）',
+                    'Randomly Dummy Traffic - Airplane (On/Off)': '随机虚拟交通 - 飞机（开/关）',
+                    'Randomly Dummy Traffic - Watercraft (On/Off)': '随机虚拟交通 - 水上交通工具（开/关）',
+                    'Taxi Preference': '出租车偏好',
+                    'PublicTransport Preference': '公共交通偏好',
+                    'PersonalCar Preference': '私家车偏好',
+                    'Buying PersonalCar Preference': '购买私家车偏好'
+
+                },
+                [MAIN.设置.分类],{
+                    'CityPlayer Traffic Custom': '交通自定义',
+                    'RUSH HOUR CUSTOM MOD': '高峰时间定制',
+                    'RANDOM TRAFFIC CUSTOM MOD': '随机虚拟交通定制',
+                    'CITIZEN TRANSPORTAION PREFERENCE CUSTOM MOD': '居民交通偏好定制',
+                    'EXPERIMAENTAL MOD': '实验性模组'
+                },
+                [MAIN.设置.按钮, MAIN.设置.标题],{
+                    'RESET SETTINGS':'重置设置'
+
+                },
+                [MAIN.下拉框.值,MAIN.下拉框.标签],{
+                    'Very low':'非常低',
+                    'Low':'低',
+                    'High':'高',
+                    'Very high':'非常高'
+                },
+                [MAIN.设置.描述],{
+                    "Reset 'CityPlayer Traffic Custom Mod' settings.":'重置城市玩家交通定制模组设置',
+                    "Creates Rush Hours for Cars and Trucks between Outside-Cities. This option can make game more difficult. (Rush hour varies in severity depending on the size of the city)":'在城市之间为汽车和卡车创建高峰时间。此选项可能使游戏更加困难。（高峰时间的严重程度取决于城市的大小）',
+                    "Control Strength of Rush Hour. (Default:3,  Min:1 Max:5)":'控制高峰时间的强度。（默认值：3，最小值：1 最大值：5）',
+                    "Turn On/Off randomly generated dummy Car Vehicles.":'打开/关闭随机生成的虚拟汽车交通。',
+                    "Turn On/Off randomly generated dummy Train Vehicles.":'打开/关闭随机生成的虚拟火车交通。',
+                    "Turn On/Off randomly generated dummy Airplane Vehicles.":'打开/关闭随机生成的虚拟飞机交通。',
+                    "Turn On/Off randomly generated dummy Watercraft Vehicles.":'打开/关闭随机生成的虚拟水上交通。',
+                    "Control Taxi preferences.(If set up to 'None', citizens don't use Taxi.)":"控制出租车偏好。（如果设置为“无”，市民不使用出租车。）",
+                    "Control PublicTransport preferences.":'控制公共交通偏好。',
+                    "Control Personal Car preferences.(If citizens not have own car, they don't use Personal Car)":'控制个人汽车偏好。（如果市民没有自己的汽车，他们不使用个人汽车。）',
+                    "Control Buying Personal Car preferences.(The higher preference, the more likely to buy a Personal Car.)":'控制购买个人汽车的偏好。（偏好值越高，购买个人汽车的可能性越大。）'
+                }
+            ),
+            TWEAKUI: RE(
+                [HOOKUI.顶栏.名称,HOOKUI.面板.标题],{
+                    'TweakUI':'调整 UI',
+                },
+                [rif().class('label_VSW').all],{
+                    'Transportation Overview Height': '交通总览高度',
+                    'Asset Menu Rows': '资产菜单行数'
+                },
+                [rif().class('description_VWf').class('paragraphs_nbD').all],{
+                    'Change the height of the transportation overview.': '更改交通总览的高度。',
+                    'Change the number of rows on the tool asset menu.': '更改工具资产菜单上的行数。'
+                },
+                [rif().class('tab-bar_oPw').class('tab_Hrb')],{
+                    'Settings':'设置'
+                }
+
             ),
             报错翻译: RE(
                 [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
