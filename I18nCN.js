@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.1//
+//version=1.5.2//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1616,6 +1616,12 @@ function replaceContent() {
                 },
                 [rif().class('tab-bar_oPw').class('tab_Hrb')],{
                     'Settings':'设置'
+                }
+
+            ),
+            色彩调整: RE(
+                [MAIN.设置.选项],{
+                    'ColorAdjustments':'色彩调整'
                 }
 
             ),
