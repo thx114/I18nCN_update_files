@@ -1754,7 +1754,9 @@ function replaceContent() {
                     "Right click to designate the water surface elevation.":
                     "右键单击以指定水面高程。",
                     "Sea water sources must touch the map border.":
-                    "海水源必须接触地图边界。"
+                    "海水源必须接触地图边界。",
+                    'This water source must be placed inside the playable map.':
+                    '水源必须在地图内'
                 }
             ),
             报错翻译: RE(
