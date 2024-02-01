@@ -1798,6 +1798,13 @@ function replaceContent() {
 
         }
     }
+    try{
+    if(rif().class('header_IuN.header_Bpo.child-opacity-transition_nkS').class('title-bar_PF4').items.length){
+        let E = rif().class('header_IuN.header_Bpo.child-opacity-transition_nkS').class('title-bar_PF4').items[0]
+        let child = E.children[4]
+        E.removeChild(child)
+        }
+    }catch{}
 
 }
 
