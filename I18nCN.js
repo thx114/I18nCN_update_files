@@ -1650,7 +1650,7 @@ function replaceContent() {
                     'Water Tool': '水工具',
                     'Waves and Tides': '波浪和潮汐'
                 },
-                [MAIN.按钮],{
+                [MAIN.按钮,MAIN.设置.标题],{
                     'Reset Seasonal Streams Settings': '重置季节性溪流设置',
                     'Water Clean Up Cycle': '水清理周期',
                     'Reset Water Tool Settings': '重置水工具设置',
