@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.2//
+//version=1.5.3//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1623,7 +1623,87 @@ function replaceContent() {
                 [MAIN.设置.选项],{
                     'ColorAdjustments':'色彩调整'
                 }
+            ),
+            水景工具:RE(
+                [MAIN.设置.选项],{
+                    'Water Features':'水景工具'
+                },
+                [MAIN.设置.标签,MAIN.设置.标题],{
+                    'Enable Seasonal Streams': '启用季节性河流',
+                    'Simulate Snow Melt': '模拟雪融化',
+                    'Constant Flow Rate': '恒定流速',
+                    'Seasonality': '季节性',
+                    'Stormwater Effects': '雨水效果',
+                    'Minimum Multiplier': '最小倍增器',
+                    'Maximum Multiplier': '最大倍增器',
 
+                    'Try Smaller Radii': '尝试较小的半径',
+                    'Add Detention Basins (Restart Required)': '添加滞留池（需要重新启动）',
+                    'Add Retention Basins (Restart Required)': '添加保留池（需要重新启动）',
+                    'Evaporation Rate': '蒸发率',
+
+                    'Enable Waves and Tides': '启用波浪和潮汐'
+                },
+                [MAIN.设置.TAB],{
+                    'Seasonal Streams': '季节性溪流',
+                    'Water Tool': '水工具',
+                    'Waves and Tides': '波浪和潮汐'
+                },
+                [MAIN.按钮],{
+                    'Reset Seasonal Streams Settings': '重置季节性溪流设置',
+                    'Water Clean Up Cycle': '水清理周期',
+                    'Reset Water Tool Settings': '重置水工具设置',
+                    'Reset Waves and Tides Settings': '重置波浪和潮汐设置'
+                },
+                [MAIN.设置.描述],{
+                    "Seasonal streams takes Streams (Modified Constant Rate Water Sources) and ties them to the climate and weather for the map. For example, if your map features a dry summer, then these water sources will decrease during the summer. Seasonal streams by it-self should not cause flooding since it treats the map's default water source amount as a maximum unless you change it. All aspects are optional and adjustable in the mod's settings.":
+                    '季节性河流将水流（修改后的常定流水源）与地图的气候和天气联系起来。例如，如果你的地图有一个干燥的夏天，那么这些水源在夏天会减少。季节性河流本身不应该引起洪水，因为它将地图的默认水源量视为最大值，除非你进行更改。所有方面都可以在模组的设置中进行选择和调整。',
+
+                    "Simulate snow accumulation and snow melt. Snow melt is not currently tied to snow visuals. This affects Constant Rate Water Sources, Detention and Retention basins.":
+                    '模拟雪的积累和融化。目前，雪融化与雪的视觉效果没有直接关联。这会影响常定流水源、蓄水和保水盆地。',
+
+                    "Constant flow rate from  Streams (Modified Constant Rate Water Sources) unaffected by season or weather.":
+                    '来自水流（修改后的常定流水源）的常定流速，不受季节或天气的影响。',
+
+                    "Streams (Modified Constant Rate Water Sources) flowrates will increase by this percentage during the season with the highest mean seasonal precipitation. Other seasons will be proportional.":
+                    '在具有最高季节降水平均值的季节，水流（修改后的常定流水源）的流速将增加这个百分比。其他季节将成比例增加。',
+
+                    "Streams (Modified Constant Rate Water Sources) flowrates will increase by this percentage when current precipitation (rain) is at a maximum. Less precipitation is proportional.":
+                    '在当前降水（雨）达到最大值时，水流（修改后的常定流水源）的流速将增加这个百分比。降水较少时成比例增加。',
+
+                    "Minimum multiplier applied to stream flowrates.":
+                    '应用于流速的最小倍增器。',
+
+                    "Maximum multiplier applied to stream flowrates.":
+                    '应用于流速的最大倍增器。',
+
+                    "On confirmation, resets Seasonal Streams Settings.":
+                    '确认后，将重置季节性河流设置。',
+
+                    "Lets you try to make a water source with a radius smaller than 5m. It will not always work, but will be increased to a radius that does work.":
+                    '允许你尝试制作半径小于5米的水源。它不总是有效的，但会增加到有效的半径。',
+
+                    "Custom modded water source that rises with precipitation and snowmelt and slowly drains when the weather is dry. They have a maximum water surface elevation but no minimum water surface elevation. You may need to adjust the global evaporation rate in the settings for desirable infiltration of the pond water.":
+                    '自定义修改的水源，随着降水和融雪而上涨，在天气干燥时缓慢排水。它们具有最大水面高度，但没有最小水面高度。你可能需要在设置中调整全局蒸发速率，以便池塘水的渗透效果理想。',
+
+                    "Custom modded water source that rises with precipitation and snowmelt and slowly drains when the weather is dry. They have a maximum water surface elevation and a minimum water surface elevation. You may need to adjust the global evaporation rate in the settings for desirable infiltration of the pond water.":
+                    '自定义修改的水源，随着降水和融雪而上涨，在天气干燥时缓慢排水。它们具有最大水面高度和最小水面高度。你可能需要在设置中调整全局蒸发速率，以便池塘水的渗透效果理想。',
+
+                    "Should probably leave at default unless you are using detention or retention basins. Actual evaporation rate is 1000x smaller but this gives you control over the rate. This is global and you may want to rebalance and increase flows of water sources after increasing it.":
+                    '除非你正在使用蓄水池或保水池，否则最好保持默认值。实际蒸发速率要小1000倍，但这使你能够控制速率。这是全局的，你可能想在增加后重新平衡和增加水源的流量。',
+
+                    "This will increase the rate of evaporation by 1000x FOR THE WHOLE MAP for a short amount of time before returning to normal. For cleaning up water messes but USE AT YOUR OWN RISK! Lakes with an target elevation below the ground level are a safer way to remove water.":
+                    '这将在整个地图上短时间内将蒸发速率提高1000倍，然后恢复正常。用于清理水的混乱，但使用需谨慎！具有目标高程低于地面水平的湖泊是更安全的排水方式。',
+
+                    "On confirmation, resets Water Tool Settings.":
+                    '点击确认后，将重置水工具设置。',
+
+                    "This feature is dependent on map design. Maps with a sea water source and a single shoreline work best. The point of the waves feature is to make the shore move in and out and make sand along the shoreline. A better way to make beaches is to just paint them with surface painter instead. Waves exacerbate the magnitude of the water surface. Tides happen once or twice a day. Waves and tides are always lower than the original sea level and do not cause flooding.":
+                    '此功能依赖于地图设计。具有海水源和单个海岸线的地图效果最佳。波浪功能的目的是使海岸线进出，并在沿海形成沙滩。更好的制作海滩的方式是使用表面绘图工具直接绘制。波浪加剧了水面的幅度。潮汐每天发生一到两次。波浪和潮汐始终低于原始海平面，不会引起洪水。',
+
+                    "On confirmation, resets Waves and Tides Settings.":
+                    '点击确认后，将重置波浪和潮汐设置。',
+                }
             ),
             报错翻译: RE(
                 [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
