@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.4//
+//version=1.5.5//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1746,6 +1746,14 @@ function replaceContent() {
                     '快速填充直到达到所需水平，然后保持该水平。如果目标高程低于地面水平，它可以比蒸发更快地排水。右键单击以指定目标高程。左键单击以放置在可玩区域内。悬停并右键单击以移除。',
                     'Controls water flowing into or out of the border and the lowest sea controls sea level. With Waves and Tides disabled, it will maintain constant level. With Waves and Tides enabled the sea level rises and falls below the original sea level. Right click to designate the elevation. Left click to place if the radius touches a border. Hover over and right click to remove.':
                     '控制流入或流出边界的水，最低海域控制海平面。如果禁用了波浪和潮汐，它将保持恒定水平。启用波浪和潮汐时，海平面将在原始海平面以下升降。右键单击以指定高程。如果半径触及边界，则左键单击以放置。悬停并右键单击以移除。'
+                },
+                [MAIN.悬浮框.提示],{
+                    "Rivers must be placed near map border.":
+                    "河流必须靠近地图边界。",
+                    "Right click to designate the water surface elevation.":
+                    "右键单击以指定水面高程。",
+                    "Sea water sources must touch the map border.":
+                    "海水源必须接触地图边界。"
                 }
             ),
             报错翻译: RE(
