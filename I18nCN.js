@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.5//
+//version=1.5.6//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -210,7 +210,8 @@ function replaceContent() {
             悬浮框: {
                 标题: rif().class('balloon_qJY.balloon_H23.up_ehW.center_hug.anchored-balloon_AYp.up_el0').class('title_lCJ'),
                 内容: rif().class('balloon_qJY.balloon_H23.up_ehW.center_hug.anchored-balloon_AYp.up_el0').class('paragraphs_nbD.description_dNa').first,
-                提示: rif().class('tooltip-fade-in S9n')
+                提示: rif().class('tooltip-fade-in_S9n'),
+                提示2: rif().class('value_uLz')
             },
             工具框: {
                 标签: rif().class('tool-options-panel_Se6').class('label_RZX'),
@@ -1747,7 +1748,7 @@ function replaceContent() {
                     'Controls water flowing into or out of the border and the lowest sea controls sea level. With Waves and Tides disabled, it will maintain constant level. With Waves and Tides enabled the sea level rises and falls below the original sea level. Right click to designate the elevation. Left click to place if the radius touches a border. Hover over and right click to remove.':
                     '控制流入或流出边界的水，最低海域控制海平面。如果禁用了波浪和潮汐，它将保持恒定水平。启用波浪和潮汐时，海平面将在原始海平面以下升降。右键单击以指定高程。如果半径触及边界，则左键单击以放置。悬停并右键单击以移除。'
                 },
-                [MAIN.悬浮框.提示],{
+                [MAIN.悬浮框.提示2],{
                     "Rivers must be placed near map border.":
                     "河流必须靠近地图边界。",
                     "Right click to designate the water surface elevation.":
@@ -1776,6 +1777,7 @@ function replaceContent() {
                 ReFunc.forEach(func => func.REPLACE(ReStrs))
             }
         }
+        
 
         
 
@@ -1799,4 +1801,16 @@ function replaceContent() {
 
 
 setInterval(replaceContent, 150);
+
+const testi18 = async (Func) => {
+    function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
+    let clearTime = 0
+    while (clearTime < 20) {
+        await delay(200)
+        try {
+            Func()
+        } catch { }
+        clearTime +=1
+    }
+}
 //REPLACE_ITEMS_END//
