@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.3//
+//version=1.5.4//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1376,7 +1376,8 @@ function replaceContent() {
             额外景观工具: RE(
                 [MAIN.工具框.标签], {
                 'Brush': '笔刷',
-                'Brush Rotation': '笔刷角度'
+                'Brush Rotation': '笔刷角度',
+                'Show Markers':'显示标记'
             },
                 [MAIN.工具框.值], {
                 'Custom 01': '自定义 01',
@@ -1403,7 +1404,6 @@ function replaceContent() {
             },
                 [MAIN.工具栏.资产详情.描述], {
                 'Assets.SUB_SERVICE_DESCRIPTION[Surfaces]': '一些地面/地表,无碰撞体积'
-
             }
             ),
             扩展热键: RE(
@@ -1703,6 +1703,49 @@ function replaceContent() {
 
                     "On confirmation, resets Waves and Tides Settings.":
                     '点击确认后，将重置波浪和潮汐设置。',
+                },
+                [MAIN.工具框.标签],{
+                    "Flow":"流量",
+                    'Depth':'深度'
+                },
+                [MAIN.悬浮框.标题],{
+                    "Reduce Flow/Depth/Elevation": '减少流量/深度/高程',
+                    'Increase Flow/Depth/Elevation': '增加流量/深度/高程',
+                    'Flow/Depth/Elevation Rate of Change': '流量/深度/高程变化率',
+                    'Reduce Radius': '减小半径',
+                    'Increase Radius': '增加半径',
+                    'Radius Rate of Change': '半径变化率'
+
+                },
+                [MAIN.悬浮框.内容],{
+                    "Reduces the flow for Streams. Decreases the depth or elevation for rivers, seas, and lakes. Reduces the max depth for retention and detention basins.":
+                    '减小河流的流量。减小河流、海洋和湖泊的深度或高程。减小蓄水和滞水池的最大深度。',
+
+                    "Increases the flow for Streams. Increases the depth or elevation for rivers, seas, and lakes. Increases the max depth for retention and detention basins.":
+                    '增加河流的流量。增加河流、海洋和湖泊的深度或高程。增加蓄水和滞水池的最大深度。',
+
+                    "Changes the rate in which the increase and decrease buttons work for Flow, Depth and Elevation.":
+                    '改变流量、深度和高程的增加和减少按钮的工作速率。',
+
+                    "Reduces the radius.":'减小半径。',
+                    "Increases the radius..":'增加半径。',
+                    'Changes the rate in which the increase and decrease buttons work for Radius.':'改变增加和减少按钮在半径上的工作速率。'
+                },
+                [MAIN.工具栏.资产详情.标题],{
+                    'Stream - Constant or Variable Rate Water Source': '小溪 - 恒定或可变速水源',
+                    'River - Border River Water Source': '河流 - 边界河水源',
+                    'Lake - Constant Level Water Source': '湖泊 - 恒定水平水源',
+                    'Sea - Border Sea Water Source': '海洋 - 边界海水源'
+                },
+                [MAIN.工具栏.资产详情.描述],{
+                    'Emits water depending on the settings for this mod. With Seasonal Streams disabled, the flow rate will be constant. With Seasonal Streams enabled the flow rate will vary with season, precipitation, and snowmelt depending on your settings. Left click to place within playable area. Hover over and right click to remove.':
+                    '根据此mod的设置释放水。如果禁用了季节性流，流量将保持恒定。启用季节性流时，流量将根据您的设置随季节、降水和融雪而变化。左键单击以放置在可玩区域内。悬停并右键单击以移除。',
+                    'Has a constant level and controls water flowing into or out of the border. While near the border, the source will snap to the border. Right click to designate the target elevation. Left click to place. Hover over and right click to remove.':
+                    '具有恒定水平并控制流入或流出边界的水。靠近边界时，水源会捕捉到边界。右键单击以指定目标高程。左键单击以放置。悬停并右键单击以移除。',
+                    'Fills quickly until it gets to the desired level and then maintains that level. If it has a target elevation below the ground level, it can drain water faster than evaporation. Right click to designate the target elevation. Left click to place within playable area. Hover over and right click to remove.':
+                    '快速填充直到达到所需水平，然后保持该水平。如果目标高程低于地面水平，它可以比蒸发更快地排水。右键单击以指定目标高程。左键单击以放置在可玩区域内。悬停并右键单击以移除。',
+                    'Controls water flowing into or out of the border and the lowest sea controls sea level. With Waves and Tides disabled, it will maintain constant level. With Waves and Tides enabled the sea level rises and falls below the original sea level. Right click to designate the elevation. Left click to place if the radius touches a border. Hover over and right click to remove.':
+                    '控制流入或流出边界的水，最低海域控制海平面。如果禁用了波浪和潮汐，它将保持恒定水平。启用波浪和潮汐时，海平面将在原始海平面以下升降。右键单击以指定高程。如果半径触及边界，则左键单击以放置。悬停并右键单击以移除。'
                 }
             ),
             报错翻译: RE(
