@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.6//
+//version=1.5.7//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1643,7 +1643,12 @@ function replaceContent() {
                     'Add Retention Basins (Restart Required)': '添加保留池（需要重新启动）',
                     'Evaporation Rate': '蒸发率',
 
-                    'Enable Waves and Tides': '启用波浪和潮汐'
+                    'Enable Waves and Tides': '启用波浪和潮汐',
+                    'Wave Height': '波浪高度',
+                    'Wave Frequency': '波浪频率',
+                    'Tide Height': '潮汐高度',
+                    'Tide Classification': '潮汐分类',
+                    'Damping': '阻尼'
                 },
                 [MAIN.设置.TAB],{
                     'Seasonal Streams': '季节性溪流',
@@ -1704,6 +1709,21 @@ function replaceContent() {
 
                     "On confirmation, resets Waves and Tides Settings.":
                     '点击确认后，将重置波浪和潮汐设置。',
+
+                    'Waves are generated at the map boundary where there is a Sea water source. Once generated they head towards shore. Maps were not necessarily designed for these waves, and the waves exacerbate the water surface. Waves are lower than the sea level from the original map and do not cause flooding. Maps such as San Francisco with shallow seas will need waves and tides with smaller heights to avoid large swathes of non-playable area becoming dry sand.':
+                    '海浪在地图边界的海水源处生成。一旦生成，它们就朝着岸边前进。地图不一定是为这些波浪设计的，而波浪使水面恶化。波浪低于原始地图的海平面，不会造成洪水。像旧金山这样海域较浅的地图将需要较小高度的波浪和潮汐，以避免大片非可玩区域变成干沙。',
+
+                    'Frequency for waves per day.':
+                    '每天的波浪频率。',
+
+                    'Tides are the biggest waves and they cause the sea to rise and fall along the shore. Tides can add sandy graphics along shorelines but the sand may not persist the entire time between low tide and high tide. Tides are lower than the sea level from the original map and do not cause flooding. Maps such as San Francisco with shallow seas will need waves and tides with smaller heights to avoid large swathes of non-playable area becoming dry sand. ':
+                    '潮汐是最大的波浪，它们使海水沿岸升降。潮汐可以在海岸线上添加沙质图形，但沙子可能不会在低潮和高潮之间的整个时间内持续存在。潮汐低于原始地图的海平面，不会造成洪水。像旧金山这样海域较浅的地图将需要较小高度的波浪和潮汐，以避免大片非可玩区域变成干沙。',
+
+                    'Diurnal tides have one high and one low tide per day. Semidiurnal has two high tides and two low tides per day.':
+                    '白天潮汐每天有一次高潮和一次低潮。半日潮有每天两次高潮和两次低潮。',
+
+                    'A higher value makes waves stronger while a lower value makes waves weaker. Stronger waves reach farther into the map. Weak waves may disperse before reaching shore. Vanilla is 9950 Recommended 9980-9999. The actual value is 10000x less.':
+                    '更高的值使波浪更强，而较低的值使波浪更弱。较强的波浪能够延伸到地图更远的地方。较弱的波浪可能在到达岸边之前就散开。原版是9950，推荐值为9980-9999。实际值是其10000倍之一。'
                 },
                 [MAIN.工具框.标签],{
                     "Flow":"流量",
@@ -1757,6 +1777,35 @@ function replaceContent() {
                     "海水源必须接触地图边界。",
                     'This water source must be placed inside the playable map.':
                     '水源必须在地图内'
+                },
+                [MAIN.下拉框.值,MAIN.下拉框.标签],{
+                    'Semidiurnal': '半日潮',
+                    'Diurnal': '昼夜潮'
+                }
+            ),
+            终极监视器: RE(
+                [HOOKUI.面板.标题, HOOKUI.顶栏.名称], {
+                    'City Monitor': '城市监视器',
+                },
+                [rif().class('panel_YqS').index(1).first.all.index(1).index(1)], {
+                    'Electricity': '电力资源可用性',
+                    'Water': '水资源可用率',
+                    'Sewage': '污水处理',
+                    'Garbage Processing': '垃圾处理',
+                    'Fire Hazard': '火灾危险',
+                    'Crime Rate': '犯罪率',
+                    'Traffic Flow': '交通流量',
+                    'Parking Availability': '停车位可用性',
+                    'Healthcare Efficiency': '医疗效率',
+                    'Deathcare Efficiency': '殡仪服务效率',
+                    'Imprisonment Capacity': '监狱容量',
+                    'Education Availability': '教育可用性',
+                    'Income Efficiency': '收入效率',
+                    'Monthly Population Growth': '每月人口增长',
+                    'Avg. Pollution': '平均污染'
+                },
+                [HOOKUI.面板.标题], {
+                    'City': '城市监视器'
                 }
             ),
             报错翻译: RE(
@@ -1809,7 +1858,7 @@ function replaceContent() {
 }
 
 
-setInterval(replaceContent, 150);
+setInterval(replaceContent, 135);
 
 const testi18 = async (Func) => {
     function delay(ms) { return new Promise(resolve => setTimeout(resolve, ms)); }
