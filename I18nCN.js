@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.7//
+//version=1.5.8//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1401,10 +1401,12 @@ function replaceContent() {
                 'River01Brush': '河流 01'
             },
                 [MAIN.工具栏.资产详情.标题], {
-                'SubServices.NAME[Surfaces]': '地面'
+                'SubServices.NAME[Surfaces]': '地面',
+                'Decals':'标识'
             },
                 [MAIN.工具栏.资产详情.描述], {
-                'Assets.SUB_SERVICE_DESCRIPTION[Surfaces]': '一些地面/地表,无碰撞体积'
+                'Assets.SUB_SERVICE_DESCRIPTION[Surfaces]': '一些地面/地表,无碰撞体积',
+                'Decals':'标识'
             }
             ),
             扩展热键: RE(
@@ -1756,7 +1758,8 @@ function replaceContent() {
                     'Stream - Constant or Variable Rate Water Source': '小溪 - 恒定或可变速水源',
                     'River - Border River Water Source': '河流 - 边界河水源',
                     'Lake - Constant Level Water Source': '湖泊 - 恒定水平水源',
-                    'Sea - Border Sea Water Source': '海洋 - 边界海水源'
+                    'Sea - Border Sea Water Source': '海洋 - 边界海水源',
+                    'Water Tool':'水景工具'
                 },
                 [MAIN.工具栏.资产详情.描述],{
                     'Emits water depending on the settings for this mod. With Seasonal Streams disabled, the flow rate will be constant. With Seasonal Streams enabled the flow rate will vary with season, precipitation, and snowmelt depending on your settings. Left click to place within playable area. Hover over and right click to remove.':
@@ -1766,7 +1769,8 @@ function replaceContent() {
                     'Fills quickly until it gets to the desired level and then maintains that level. If it has a target elevation below the ground level, it can drain water faster than evaporation. Right click to designate the target elevation. Left click to place within playable area. Hover over and right click to remove.':
                     '快速填充直到达到所需水平，然后保持该水平。如果目标高程低于地面水平，它可以比蒸发更快地排水。右键单击以指定目标高程。左键单击以放置在可玩区域内。悬停并右键单击以移除。',
                     'Controls water flowing into or out of the border and the lowest sea controls sea level. With Waves and Tides disabled, it will maintain constant level. With Waves and Tides enabled the sea level rises and falls below the original sea level. Right click to designate the elevation. Left click to place if the radius touches a border. Hover over and right click to remove.':
-                    '控制流入或流出边界的水，最低海域控制海平面。如果禁用了波浪和潮汐，它将保持恒定水平。启用波浪和潮汐时，海平面将在原始海平面以下升降。右键单击以指定高程。如果半径触及边界，则左键单击以放置。悬停并右键单击以移除。'
+                    '控制流入或流出边界的水，最低海域控制海平面。如果禁用了波浪和潮汐，它将保持恒定水平。启用波浪和潮汐时，海平面将在原始海平面以下升降。右键单击以指定高程。如果半径触及边界，则左键单击以放置。悬停并右键单击以移除。',
+                    'Water tool allows you to add and remove water sources from your map.':'水景工具允许您在地图上添加和移除水源。'
                 },
                 [MAIN.悬浮框.提示2],{
                     "Rivers must be placed near map border.":
@@ -1808,6 +1812,62 @@ function replaceContent() {
                     'City': '城市监视器'
                 }
             ),
+            额外景观工具扩展_地面: RE(
+                [MAIN.悬浮框.内容,MAIN.悬浮框.标题],{
+                    'Surfaces':'地面'
+                },
+                [MAIN.工具栏.资产详情.标题,MAIN.工具栏.资产详情.描述],{
+                    'Concrete': '混凝土',
+                    'Ground': '地面',
+                    'Tiles': '瓷砖',
+                    'Wood': '木材'
+                },
+                [MAIN.工具栏.资产详情.标题],{
+                    'Asphalt 001': '沥青 001',
+                    'Asphalt 002': '沥青 002',
+                    'Cracked Asphalt': '破裂的沥青',
+                    'Polished Concrete': '抛光混凝土',
+                    'Weathered Asphalt': '风化的沥青',
+                    'Grass 001': '草地 001',
+                    'Snow': '雪',
+                    'Scattered Leaves': '散落的树叶',
+                    'Sand': '沙子',
+                    'Rocky Sand': '岩石沙',
+                    'Wet Sand': '湿沙',
+                    'Mulch': '覆盖物',
+                    'Mud': '泥巴',
+                    'Grass Checkered Lawn': '格子草坪',
+                    'Podzol': '灰土',
+
+                    'Dark Grey Ceramic Tile': '深灰色陶瓷砖',
+                    'Yellow & Grey Paving Stone': '黄灰色铺路石',
+                    'White & Grey Plaza Paving Stone': '白灰色广场铺路石',
+                    'Red Brick': '红砖',
+                    'Hexagonal Grey Paving Stone': '六角灰色铺路石',
+                    'Hexagonal Dark Grey Paving Stone': '六角深灰色铺路石',
+                    'Herringbone Grey Paving Stone 002': '人字形灰色铺路石 002',
+                    'Herringbone Grey Paving Stone 003': '人字形灰色铺路石 003',
+                    'Grey Walking stone': '灰色行走石',
+                    'Grey Paving Stone': '灰色铺路石',
+                    'Grey Ceramic Tile': '灰色陶瓷砖',
+                    'Grey Brick': '灰色砖',
+                    'Eco Pavement': '生态铺路',
+                    'Herringbone Grey Paving Stone 001': '人字形灰色铺路石 001',
+                    'Wood 001': '木头 001',
+                    'Wood 002': '木头 002',
+                    'Wood 003': '木头 003'
+                }
+            ),
+            更好的推土机: RE(
+                [MAIN.悬浮框.内容],{
+                    'Shows and EXCLUSIVELY targets markers and invisible roads. With this enabled you can demolish invisible networks, invisible parking decals, various spots, points, and spawners, but SAVE FIRST! You cannot demolish these within buildings.':
+                    '显示并且专门针对标记和看不见的道路。启用此功能后，您可以拆除看不见的网络、看不见的停车标记、各种点、点和生成器，但是请先保存！您不能在建筑物内拆除这些。',
+
+                    'Makes the bulldozer EXCLUSIVELY target surfaces and spaces inside or outside of buildings so you can remove them in one click. You must turn this off to bulldoze anything else.':
+                    '使推土机专门针对建筑物内外的表面和空间，以便您可以一键移除它们。您必须关闭此功能才能拆除其他任何东西。'
+                }
+            ),
+            
             报错翻译: RE(
                 [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
                     [e_="Can not write to queue when system isn't running"]:e_+"<p>可能的报错模组: </p> <p>·信息隐现 InfoLoom</p>",
