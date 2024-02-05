@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.8//
+//version=1.5.9//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -884,7 +884,8 @@ function replaceContent() {
                 'InfoLoom: Workplaces': '信息隐现: 工作场所',
                 'InfoLoom: Demand Factors': '信息隐现: 建筑需求',
                 'InfoLoom: Commercial Data': '信息隐现: 商业信息',
-                'InfoLoom: Residential Data': '信息隐现: 住宅数据'
+                'InfoLoom: Residential Data': '信息隐现: 住宅数据',
+                'InfoLoom: Industrial and Office Data':'信息隐现: 工业和办公数据'
             },
                 [HOOKUI.面板.标题], {
                 'Demographics': '人口统计',
@@ -892,7 +893,8 @@ function replaceContent() {
                 'Workforce Structure': '劳动力结构',
                 'Workplace Distribution': '工作场所分布',
                 'Commercial Data': '商业数据',
-                'Residential Data': '住宅数据'
+                'Residential Data': '住宅数据',
+                'Industrial and Office Data': '工业和办公数据'
             },
                 [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').class('row_S2v').isStyle('width: 60.000000%; justify-content: center; ')], {
                 'All Citizens': '所有市民',
@@ -941,7 +943,7 @@ function replaceContent() {
                 'Office': '办公',
                 'Employees': '员工',
                 'Open': '招聘',
-                'Commute':'通勤'
+                'Commute':'通勤',
             },
                 [rif().class('infoview-panel-section_RXJ').class('left_Lgw.row_S2v')], {
                 'BUILDING DEMAND': '建筑需求',
@@ -972,7 +974,8 @@ function replaceContent() {
                 'Students': '学生',
                 'Warehouses': '仓库',
                 'PetrolDemand': '汽油需求',
-                'TouristDemand': '游客需求'
+                'TouristDemand': '游客需求',
+                'PetrolLocalDemand':'汽油本地需求'
             }, [HOOKUI.面板.标签2], {
                 'PROPERTYLESS COMPANIES': '破产公司',
                 'EMPTY BUILDINGS': '空置建筑',
@@ -1006,9 +1009,17 @@ function replaceContent() {
                 "No demand at 10%": '无需求时为10%',
                 'BUILDING DEMAND': '建筑需求',
                 'STUDY POSITIONS': '学习位置',
-                'HOUSEHOLDS': '家庭'
+                'HOUSEHOLDS': '家庭',
 
+                'INDUSTRIAL': '工业',
+                'OFFICE': '办公',
 
+                'timber': '木材',
+                'metals': '金属',
+                'steel': '钢铁',
+                'minerals': '矿石',
+                'concrete': '混凝土',
+                'machinery': '机械'
             },
                 [HOOKUI.面板.标签_p], {
                 'AVERAGE TAX RATE': '平均税率',
@@ -1027,11 +1038,26 @@ function replaceContent() {
                 '0 is neutral': '正常为0%',
 
                 "TAX RATE (weighted)": '税率（加权）',
-                '10 % is neutral': '正常为10%'
+                '10 % is neutral': '正常为10%',
+                'HOUSEHOLD DEMAND': '家庭需求',
+                'STUDENT CHANCE': '上学几率',
+
+                'LOCAL DEMAND (ind)': '本地需求（工业）',
+                '100% when production = demand': '生产=需求时为100%',
+                'INPUT UTILIZATION (ind)': '输入利用率（工业）',
+                '110% is the neutral ratio, capped at 400%': '110%是中性比率，上限为400%',
+                '72% is the neutral ratio': '正常为72%',
+                'Empty buildings': '空建筑',
+                'Propertyless companies': '无物业公司',
+                'DEMANDED TYPES': '需求类型'
 
             },
                 [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').first.first.index(11).first], {
                 'AVAILABLE WORKFORCE': '可用劳动力'
+            },
+            [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').first.first.index(13).first.all], {
+                'STORAGE': '储存',
+                'The game will spawn warehouses when DEMANDED TYPES exist.': '当存在需求类型时，游戏将生成仓库。'
             }
             ),
             失业监视器: RE(
@@ -1901,6 +1927,7 @@ function replaceContent() {
             infoDiv.innerHTML = `全局汉化: ${window.__LOGGING__} 段字符 , 耗时 ${time2 - time1} ms`
             infoDiv.id = 'I18loginfo'
             infoDiv.style.fontFamily = "Noto Sans SC"
+            infoDiv.style.justifyContent = 'flex-end'
             targetDiv.appendChild(infoDiv);
         } else {
             document.getElementById('I18loginfo').innerHTML = `全局汉化: ${window.__LOGGING__} 段字符 , 耗时 ${time2 - time1} ms`
