@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.5.9//
+//version=1.6.0//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -1303,7 +1303,9 @@ function replaceContent() {
                 'Tool Icon': '工具图标',
                 'Prevent Accidental Prop Culling': '防止意外的道具遗失',
                 'Prop Refresh Frequency': '道具刷新频率',
-                'Allow Placing Multiple Unique Buildings':'允许放置多个独特建筑'
+                'Allow Placing Multiple Unique Buildings':'允许放置多个独特建筑',
+                'Minimum Clearance Below Elevated Networks': '高架网络下的最小空间距离'
+
             },
                 [MAIN.设置.描述], {
                 'With this option enabled the Bulldoze Tool will always have anarchy enabled.': '启用此选项后，清障工具将始终启用无碰撞状态。',
@@ -1314,7 +1316,8 @@ function replaceContent() {
                 'This will routinely trigger a graphical refresh to props placed with Anarchy that have been culled to prevent accidental culling of props. This affects performance.': '这将定期触发对使用 无碰撞 放置的被剔除的道具进行图形刷新，以防止意外的道具遗失。这会影响性能。',
                 'This is number of frames between graphical refreshes to props placed with Anarchy to prevent accidental culling. Higher numbers will have better performance, but longer possible time that props may be missing.': '这是在 Anarchy 下放置的道具之间的图形刷新之间的帧数，以防止意外的剔除。数字越大，性能越好，但可能遗失道具的时间越长。',
                 "If props placed with Anarchy have been accidently culled, you can press this button to bring them back now. This doesn't negatively effect performance.": '如果使用 无碰撞 放置的道具被意外剔除，您可以按下此按钮立即将它们恢复。这不会对性能产生负面影响。',
-                'This allows you to place multiple copies of unique buildings using the normal UI menu with or without Anarchy enabled. The effects of these buildings stack!':'这允许您使用正常的 UI 菜单放置多个独特建筑，无论是否启用 Anarchy。这些建筑的效果叠加！'
+                'This allows you to place multiple copies of unique buildings using the normal UI menu with or without Anarchy enabled. The effects of these buildings stack!':'这允许您使用正常的 UI 菜单放置多个独特建筑，无论是否启用 Anarchy。这些建筑的效果叠加！',
+                'With the net tool and Anarchy enabled you can violate the clearance of other networks. Zoning under low bridges can spawn buildings while doing this. This setting gives you some control over the minimum space below a low bridge. It would be better to just remove the zoning.':'当启用道路工具和 无碰撞 mod 时，您可以违反其他网络的空间限制。在低桥下划定区域可能会在执行此操作时生成建筑物。此设置允许您对低桥下的最小空间进行一些控制。最好是删除区域规划。'
             },
                 [MAIN.按钮, MAIN.设置.标题], {
                 'Reset Anarchy Settings': '重置 无碰撞模组 设置',
@@ -1837,7 +1840,7 @@ function replaceContent() {
                 [HOOKUI.面板.标题], {
                     'City': '城市监视器'
                 }
-            ),
+            ), 
             额外景观工具扩展_地面: RE(
                 [MAIN.悬浮框.内容,MAIN.悬浮框.标题],{
                     'Surfaces':'地面'
@@ -1884,6 +1887,11 @@ function replaceContent() {
                     'Wood 003': '木头 003'
                 }
             ),
+            额外景观工具扩展_资产: RE(
+                [MAIN.悬浮框.内容,MAIN.悬浮框.标题],{
+                    'Props':'道具'
+                }
+            ),
             更好的推土机: RE(
                 [MAIN.悬浮框.内容],{
                     'Shows and EXCLUSIVELY targets markers and invisible roads. With this enabled you can demolish invisible networks, invisible parking decals, various spots, points, and spawners, but SAVE FIRST! You cannot demolish these within buildings.':
@@ -1893,19 +1901,20 @@ function replaceContent() {
                     '使推土机专门针对建筑物内外的表面和空间，以便您可以一键移除它们。您必须关闭此功能才能拆除其他任何东西。'
                 }
             ),
-            
-            报错翻译: RE(
-                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('error-message_r4_')],{
-                    [e_="Can not write to queue when system isn't running"]:e_+"<p>可能的报错模组: </p> <p>·信息隐现 InfoLoom</p>",
-                    [e_='URL: coui://linetool']:e_+"<p>可能的报错模组: </p> <p>·条形工具 LineTool</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
-                    [e_='System update error during Deserialize']:e_+"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p><p></p><p>原因: </p> <p>反序列化过程中的系统更新错误</p>",
-                    [e_='URL: coui://uil/Colored/AnarchyChirper.svg']:e_+"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>",
-                    [e_='URL: coui://gameui/Media/Menu/OverlayBackground.png']:e_+"<p>可能的报错模组: </p> <p>·未知</p><p></p><p>原因: </p> <p>无法加载背景图片</p>",
-                    [e_='System update error during GameSimulation System.ArgumentException: Allocator index into TryFunction delegate table exceeds maximum.']:e_+"<p>可能的报错模组: </p> <p>·原版</p><p></p><p>原因: </p> <p>模拟异常-实体内存分配异常</p>",
-                    'Anarchy.svg':"<p>可能的报错模组: </p> <p>·无碰撞 Anarchy</p><p></p><p>原因: </p> <p>缺少前置模组 统一图标库</p>"
+            树木风力控制器: RE(
+                [HOOKUI.面板.标题,HOOKUI.顶栏.名称],{
+                    'Tree Wind Controller':'树木风力控制器'
                 },
-                [rif({match:'inc',full:'ture',mode:'html'}).class('panel_YqS.error-dialog_iaV').class('content_gqa')],{
-                    'RealisticDensity':"<p>可能的报错模组: </p> <p>·现实密度 RealisticDensity</p>"
+                [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').first.first.first.first],{
+                    'Disable All Wind:':'关闭所有风'
+                },
+                [rif().class('content_XD5.content_AD7.child-opacity-transition_nkS').first.all.first],{
+                    'Wind Strength:':'风强度',
+                    'Wind Strength Variance:':'风力变化',
+                    'Wind Strength Variance Period:':'风力变化周期',
+                    'Wind Direction:':'风向',
+                    'Wind Direction Variance:':'风向变化',
+                    'Wind Direction Variance Period:':'风向变化周期'
                 }
             )
         }
