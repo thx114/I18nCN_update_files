@@ -1916,6 +1916,24 @@ function replaceContent() {
                     'Wind Direction Variance:':'风向变化',
                     'Wind Direction Variance Period:':'风向变化周期'
                 }
+            ),
+            地图编辑器_气候: RE(
+                [rif().class('list-item_qRg.item_H00').class('name_u39'),rif().class('control_Hds').class('picker-toggle_d6k')], {
+                'ContinentalCorralRichesClimate': '陆地珊瑚气候',
+                'ContinentalGreatHighlandsClimate': '陆地高地气候',
+                'ContinentalLakelandClimate': '陆地湖泊气候',
+                'ContinentalMountainVillageClimate': '陆地山村气候',
+                'ContinentalTampereClimate': '陆地坦佩雷气候',
+                'PolarSweepingPlainsClimate': '极地平原气候',
+                'PolarTwinMountainClimate': '极地山地气候',
+                'PolarWindyFjordsClimate': '极地峡湾气候',
+                'TemperateArchipelagoHavenClimate': '温带群岛气候',
+                'TemperateBarrierIslandClimate': '温带障碍岛气候',
+                'TemperateSanFranciscoClimate': '温和的旧金山气候',
+                'TemperateSunshinePeninsulaClimate': '温带阳光半岛气候',
+                'TemperateWaterwayPassClimate': '温带航道气候',
+                'TemperateRiverDeltaClimate': '温带河三角洲气候'
+                }
             )
         }
         for (const [ObjName, ObjReItems] of Object.entries(REPLACE_ITEM_NEW)) {
