@@ -479,10 +479,6 @@ function replaceContent() {
                 [开发者模式.内容.控制值], {
                 'Atmosphere1Prefab': '大气层1预制体',
                 'GrasslandBiomePrefab': '草原生态群落预制体',
-                'ContinentalCorralRichesClimate': '大陆牧场富饶气候',
-                'TemperateSanFranciscoClimate': '温和的旧金山气候',
-                'TemperateArchipelagoHavenClimate': '温和的群岛避风港气候',
-                'TemperateRiverDeltaClimate': '温带河口气候',
                 'SeasonSummer': '夏季季节',
                 'Oil Lot - Navigation': '石油地块 - 导航',
                 'Ore Lot - Navigation': '矿石地块 - 导航',
@@ -1918,7 +1914,7 @@ function replaceContent() {
                 }
             ),
             地图编辑器_气候: RE(
-                [rif().class('list-item_qRg.item_H00').class('name_u39'),rif().class('control_Hds').class('picker-toggle_d6k')], {
+                [rif().class('list-item_qRg.item_H00').class('name_u39'),rif().class('control_Hds').class('picker-toggle_d6k'),开发者模式.内容.控制值], {
                 'ContinentalCorralRichesClimate': '陆地珊瑚气候',
                 'ContinentalGreatHighlandsClimate': '陆地高地气候',
                 'ContinentalLakelandClimate': '陆地湖泊气候',
