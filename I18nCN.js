@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=2.1.0//
+//version=2.1.1//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -274,7 +274,8 @@ function replaceContent() {
                 rif().class('content_yeu').class('toggle-label_UK9'),
                 rif().class('content_yeu').class('label_OqN'),
                 rif().class('content_yeu').class('label_BbZ'),
-                rif().class('name_u39'),
+                rif().class('picker-popup_pUb').hasHtml.class('name_u39'),
+                rif().class('content_yeu.content_AD7').class('page-view_PUO').class('name_u39'),
 
                 rif().class('content_yeu').class('label_tNr'),
                 rif().class('content_yeu').class('picker-toggle_d6k'),
@@ -290,14 +291,15 @@ function replaceContent() {
                 rif({match:'inc'}).class('content_yeu').class('toggle-label_UK9'),
                 rif({match:'inc'}).class('content_yeu').class('label_OqN'),
                 rif({match:'inc'}).class('content_yeu').class('label_BbZ'),
-                rif({match:'inc'}).class('name_u39'),
+                rif({match:'inc'}).class('picker-popup_pUb').class('name_u39'),
+                rif({match:'inc'}).class('content_yeu.content_AD7').class('page-view_PUO').class('name_u39'),
 
                 rif({match:'inc'}).class('content_yeu').class('label_tNr'),
                 rif({match:'inc'}).class('content_yeu').class('picker-toggle_d6k'),
                 rif({match:'inc'}).class('dropdown-item_Hjk'),
                 rif({match:'inc'}).class('label_tNr'),
-                rif({match:'inc'}).class('toggle-flags-button_T7X'),
-                
+                rif({match:'inc'}).class('toggle-flags-button_T7X')
+
             ],
 
         }
