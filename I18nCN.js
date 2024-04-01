@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=1.6.0//
+//version=2.0.0//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
@@ -135,6 +135,7 @@ class RIF {
                 }
             }
         })
+
     }
     get enable() {
         this.items = this.items.forEach(item => {
@@ -279,6 +280,9 @@ function replaceContent() {
                 'Allow gameplay manipulation': '允许游戏中操控',
                 'Debug toggle': '调试选中',
                 'Bypass validation results': '无碰撞',
+                'Parallel Road':'并列',
+                'Elevation':'高度',
+                'Elevation Step':'高度阶段',
                 'Sim speed': '模拟速度',
                 'Smooth speed': '平滑速度',
                 'Interpolation offset': '插值偏移',
@@ -286,6 +290,8 @@ function replaceContent() {
                 'Disable trips': '禁用行程',
                 'Debug Lifepath Chirps ': '调试生命周期轨迹',
                 'Birth Chance': '出生几率',
+                'Snap guide lines':'对齐导线',
+                'Snap zone grid': '对齐功能区',
 
                 'Atmosphere': '大气层',
                 'Biome': '生态群落',
@@ -297,8 +303,9 @@ function replaceContent() {
                 'Use Active Cells Culling': '使用活动单元剔除',
                 'Water Grid Size Multiplier': '水格大小',
                 'Water grid size': '水格大小',
-                'Flow number of Downscale': '流动降尺度数量',
+                'Flow number of Downscale': '流动降阶数量',
                 'Blur flow': '流动模糊',
+                'Enable flow Dounscale':'启用流动降阶',
                 'Flow limiter for render': '流动渲染限制器',
                 'Max Water Flow Length for render': '最大渲染水流长度',
                 'Water Flow Render Multiplier': '水流渲染倍增',
@@ -326,9 +333,9 @@ function replaceContent() {
                 'Time of day multiplier': '时间流速倍增',
                 'Number of lunar cycles per year': '每年的月球周期数',
                 'Override time for debug': '时间 覆盖',
-                'Superfast building spawning': '超快速建筑生成',
-                'Superfast area-prop spawning': '超快速区域道具生成',
-                'Superfast leveling': '超快速平整',
+                'Superfast building spawning': '超快速 建筑生成',
+                'Superfast area-prop spawning': '超快速 区域道具生成',
+                'Superfast leveling': '超快速 建筑升级',
                 'Select entity': '选择实体',
                 'Water Pipe Fluid Flow': '水管液体流动',
                 'Disable Water consumption': '禁用水消耗',
@@ -641,30 +648,30 @@ function replaceContent() {
                 'CBT Max Depth': 'CBT最大深度',
 
                 'All': '全部',
-                'Shader Graphs/AreaDecalShader': 'SG/区域标贴',
-                'BH/SG_CurvedShader': 'BH/SG_曲线',
-                'BH/Overlay/CurvedOverlayShader': 'BH/覆盖/曲线覆盖',
-                'BH/Decals/CurvedDecalShader': 'BH/标贴/曲线标贴',
-                'BH/Decals/CurvedDecalDeteriorationShader': 'BH/标贴/曲线标贴退化',
-                'BH/Pipeline/CurvedPipelineShader': 'BH/管道/曲线管道',
-                'BH/SG_DefaultShader': 'BH/SG_默认',
-                'BH/SG_BaseShader': 'BH/SG_基础',
-                'BH/NetCompositionMeshLitShader': 'BH/网络组合网格光照',
-                'BH/Pipeline/DefaultPipelineShader': 'BH/管道/默认管道',
-                'BH/Decals/DefaultDecalShader': 'BH/标贴/默认标贴',
-                'BH/Impostors/Render/SG_ImpostorTree': 'BH/冒牌/渲染/SG_冒牌树',
-                'BH/SG_VegRootShader': 'BH/SG_植被根',
-                'BH/SG_VegLeavesShader': 'BH/SG_植被叶',
-                'Shader Graphs/ZoneBlock': 'SG/功能区',
-                'BH/SG_WinShader': 'BH/SG_窗户',
-                'BH/WinShader': 'BH/玻璃',
-                'BH/WatShader': 'BH/水',
+                'Shader Graphs/AreaDecalShader': '表面',
+                'BH/SG_CurvedShader': '栅栏',
+                'BH/Overlay/CurvedOverlayShader': '曲线覆盖',
+                'BH/Decals/CurvedDecalShader': '道路 - 线',
+                'BH/Decals/CurvedDecalDeteriorationShader': '道路 - 车辙印',
+                'BH/Pipeline/CurvedPipelineShader': '曲线管道',
+                'BH/SG_DefaultShader': 'SG_默认',
+                'BH/SG_BaseShader': 'SG_基础',
+                'BH/NetCompositionMeshLitShader': '道路',
+                'BH/Pipeline/DefaultPipelineShader': '管道 (头)',
+                'BH/Decals/DefaultDecalShader': '道路 - 标贴',
+                'BH/Impostors/Render/SG_ImpostorTree': '远距离树木',
+                'BH/SG_VegRootShader': '植被根',
+                'BH/SG_VegLeavesShader': '植被叶',
+                'Shader Graphs/ZoneBlock': '功能区',
+                'BH/SG_WinShader': '建筑 - 窗户',
+                'BH/GlsShader': '建筑 - 玻璃',
+                'BH/WatShader': '建筑 - 水',
 
-                'Didimo/HDRP/SG_CharacterSkin': 'Didimo/HDRP/SG_角色皮肤',
-                'Didimo/HDRP/HDRPGenericCrowd': 'Didimo/HDRP/HDRP通用群体',
-                'Didimo/HDRP/SG_CharacterCloth': 'Didimo/HDRP/SG_角色布料',
-                'Didimo/HDRP/SG_CharacterGeneric': 'Didimo/HDRP/SG_角色通用',
-                'BH/Characters/SG_HairCardsDyed': 'BH/角色/SG_染色发卡',
+                'Didimo/HDRP/SG_CharacterSkin': '角色 - 皮肤',
+                'Didimo/HDRP/HDRPGenericCrowd': 'HDRP通用群体',
+                'Didimo/HDRP/SG_CharacterCloth': '角色 - 衣服',
+                'Didimo/HDRP/SG_CharacterGeneric': '角色 - 饰品',
+                'BH/Characters/SG_HairCardsDyed': '角色 - 头发',
                 'BH/GraShader': 'BH/GraShader',
 
                 'Scale': '渲染精度'
@@ -783,7 +790,7 @@ function replaceContent() {
                 'Routes': '路径',
                 'Effects': '效果',
                 'Local Effects': '局部效应',
-                'Land value': '土地价值',
+                'Land value': '地价',
                 'StorageLeveling': '存储水准',
                 'Leveling': '水准',
                 'Buildings': '建筑物',
@@ -800,6 +807,10 @@ function replaceContent() {
                 'Produce Garbage': '产生垃圾',
                 'Show Surface Boxes': '显示表面框',
                 'Show Culling Boxes': '显示裁剪框',
+                'Land value (Cell)': '区块地价',
+                'Land value (Edge)': '隐藏地价',
+                'Strict':'严格模式',
+                'Buildable Area':'可建造区域',
 
                 'Object Debug System': '物件 调试系统',
                 'Net Debug System': '道路 调试系统',
@@ -815,7 +826,7 @@ function replaceContent() {
                 'Density Debug System': '密度 调试系统',
                 'Coverage Debug System': '覆盖 调试系统',
                 'Path Debug System': '路径 调试系统',
-                'Pathfinding Debug System': '路径规划 调试系统',
+                'Pathfinding Debug System': '寻路 调试系统',
                 'Search Tree Debug System': '搜索树 调试系统',
                 'Terrain Attractiveness Debug System': '地形吸引力 调试系统',
                 'Land Value Debug System': '土地价值 调试系统',
@@ -829,9 +840,10 @@ function replaceContent() {
                 'Water Debug System': '水 调试系统',
                 'Wind Debug System': '风 调试系统',
                 'Event Debug System': '事件 调试系统',
-
-                'Tradecost Debug System': '(危险) 贸易成本 调试系统',
                 'Buildable Area Debug System': '可建造区域 调试系统'
+            },
+            [rif({func:[(i)=>{i.style.color = 'red'}]}).class('content_gqa').class('label_KyX').fontCN], {
+                'Tradecost Debug System': '(危险) 贸易成本 调试系统'
             }
             ),
             开发者模式_main: RE(
@@ -868,10 +880,15 @@ function replaceContent() {
                 'Fullscreen Debug': '全屏调试'
             },
                 [开发者模式.内容.值], {
-                'Disabled': '关闭',
-                'Enabled': '开启',
                 'None': '无',
             },
+            [rif({func:[(i)=>{i.style.color = '#8B0000'}]}).class('content_gqa').class('value_fMT').fontCN], {
+                'Disabled': '关闭'
+            },
+            [rif({func:[(i)=>{i.style.color = 'green'}]}).class('content_gqa').class('value_fMT').fontCN], {
+                'Enabled': '开启'
+            }
+
             ),
             信息隐现: RE(
                 [HOOKUI.顶栏.名称], {
@@ -1143,6 +1160,7 @@ function replaceContent() {
                 'Radius': '范围',
                 'Tool Mode': '工具模式',
                 'Sets': '集合',
+                'Change':'改变模式'
             },
                 [MAIN.设置.选项], {
                 'Tree Controller': '树木控制器'
@@ -1160,9 +1178,6 @@ function replaceContent() {
                 'Disable tree growth for the entire map except for lumber industry.':
                     '禁用整个地图的 (非林场) 树木的自然生长',
 
-                '"When multiple Tree Ages are selected, one will be selected using this option. Random: Equal Weight is just a random selection. Random: Weighted randomly selected using game\'s editor weights. Sequential: does selected ages in order."':
-                    '当选择多个树木年龄时，可以使用此选项选择树木年龄的随机方式。【随机：完全随机】【随机：按游戏编辑器中的权重随机选择】【顺序：按顺序选择所选的树木年龄】',
-
                 'Sets of seasonal colors for Trees and Wild bushes. Vanilla is the base game. Yenyang\'s is my curated colors. Custom uses CSV files in the mod folder.': '树木和野生灌木的季节性颜色集。【原版】 是基础游戏的颜色。【Yenyang的颜色集】 是我策划的颜色。【自定义】 使用模组文件夹中的 CSV 文件',
 
                 'After confirmation this will reload CSV files.':
@@ -1172,7 +1187,10 @@ function replaceContent() {
                     '移除树木控制器模组的组件并重置树木和灌木模型状态。仅在冬季和秋季末尾非常需要。必须使用重置按钮来撤销设置更改。',
 
                 'After confirmation this will reset Tree Controller Settings.':
-                    '确认后，将重置树木控制器设置。'
+                    '确认后，将重置树木控制器设置。',
+
+                "When multiple Tree Ages are selected, one will be selected using this option. Equal Distribution is just a random selection. Forest Distribution randomly selects using the editor's approximation for a forest.":
+                    '当选择多个树龄时，将使用此选项选择一个。平均分布仅是随机选择。森林分布随机使用编辑器对森林的近似值进行选择。'
 
             },
                 [MAIN.下拉框.标签, MAIN.下拉框.值], {
@@ -1543,110 +1561,110 @@ function replaceContent() {
 
 
             ),
-            RICO: RE(
-                [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
-                    'Residential Low Ploppable':'低密度住宅',
-                    'Residential Med Ploppable':'中密度住宅',
-                    'Residential High Ploppable':'高密度住宅',
-                    'Residential Row Ploppable':'中密度联排住宅',
-                    'Residential Low Rent Ploppable':'廉租公寓',
-                    'Mixed Ploppable':'混合型住宅',
-                    'Commercial Low Ploppable':'低密度商业',
-                    'Commercial High Ploppable':'高密度商业',
-                    'Office Low Ploppable':'低密度办公',
-                    'Office High Ploppable':'高密度办公',
-                    'Manufacturing Ploppable':'工厂',
-                    'Warehouse Ploppable':'仓库'
-                },
-                [rif({match:'inc',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
-                    'EU_':'欧洲',
-                    'NA_':'北美',
-                    'ResidentialLowRent':'廉租公寓',
-                    'ResidentialLow':'低密度住宅 ',
-                    'ResidentialMed':'中密度住宅 ',
-                    'ResidentialHigh':'高密度住宅 ',
-                    'ResidentialRow':'中密度联排住宅',
-                    'MixedRight':'混合型住宅',
-                    'CommercialLow':'低密度商业',
-                    'CommercialHigh':'高密度商业',
-                    'Commercial':'商业',
-                    'GasStation':'加油站',
-                    'Motel':"旅馆",
-                    'OfficeLow':'低密度办公',
-                    'OfficeHigh':'高密度办公',
-                    'IndustrialManufacturingWarehouse':'仓库',
-                    'IndustrialManufacturing':'工厂',
+            // RICO: RE(
+            //     [MAIN.工具栏.资产详情.描述,MAIN.工具栏.资产详情.标题],{
+            //         'Residential Low Ploppable':'低密度住宅',
+            //         'Residential Med Ploppable':'中密度住宅',
+            //         'Residential High Ploppable':'高密度住宅',
+            //         'Residential Row Ploppable':'中密度联排住宅',
+            //         'Residential Low Rent Ploppable':'廉租公寓',
+            //         'Mixed Ploppable':'混合型住宅',
+            //         'Commercial Low Ploppable':'低密度商业',
+            //         'Commercial High Ploppable':'高密度商业',
+            //         'Office Low Ploppable':'低密度办公',
+            //         'Office High Ploppable':'高密度办公',
+            //         'Manufacturing Ploppable':'工厂',
+            //         'Warehouse Ploppable':'仓库'
+            //     },
+            //     [rif({match:'inc',fullReplace:false}).class('asset-detail-panel_hf8.detail-panel_izf').class('title-bar_I7O.child-opacity-transition_nkS').class('title_qub')],{
+            //         'EU_':'欧洲',
+            //         'NA_':'北美',
+            //         'ResidentialLowRent':'廉租公寓',
+            //         'ResidentialLow':'低密度住宅 ',
+            //         'ResidentialMed':'中密度住宅 ',
+            //         'ResidentialHigh':'高密度住宅 ',
+            //         'ResidentialRow':'中密度联排住宅',
+            //         'MixedRight':'混合型住宅',
+            //         'CommercialLow':'低密度商业',
+            //         'CommercialHigh':'高密度商业',
+            //         'Commercial':'商业',
+            //         'GasStation':'加油站',
+            //         'Motel':"旅馆",
+            //         'OfficeLow':'低密度办公',
+            //         'OfficeHigh':'高密度办公',
+            //         'IndustrialManufacturingWarehouse':'仓库',
+            //         'IndustrialManufacturing':'工厂',
 
-                    '_L':' 等级',
-                    '_ploppable':'',
-                    'Assets.NAME':''
-                }
-            ),
-            交通自定义: RE(
-                [MAIN.设置.选项], {
-                    'CityPlayer Traffic Custom': '交通自定义'
-                },
-                [MAIN.设置.标签, MAIN.设置.标题],{
-                    'Use Rush Hour': '开启高峰时间',
-                    'Rush Hour Traffic Strength': '高峰交通强度',
-                    'Randomly Dummy Traffic - Car (On/Off)': '随机虚拟交通 - 汽车（开/关）',
-                    'Randomly Dummy Traffic - Train (On/Off)': '随机虚拟交通 - 火车（开/关）',
-                    'Randomly Dummy Traffic - Airplane (On/Off)': '随机虚拟交通 - 飞机（开/关）',
-                    'Randomly Dummy Traffic - Watercraft (On/Off)': '随机虚拟交通 - 水上交通工具（开/关）',
-                    'Taxi Preference': '出租车偏好',
-                    'PublicTransport Preference': '公共交通偏好',
-                    'PersonalCar Preference': '私家车偏好',
-                    'Buying PersonalCar Preference': '购买私家车偏好'
+            //         '_L':' 等级',
+            //         '_ploppable':'',
+            //         'Assets.NAME':''
+            //     }
+            // ),
+            // 交通自定义: RE(
+            //     [MAIN.设置.选项], {
+            //         'CityPlayer Traffic Custom': '交通自定义'
+            //     },
+            //     [MAIN.设置.标签, MAIN.设置.标题],{
+            //         'Use Rush Hour': '开启高峰时间',
+            //         'Rush Hour Traffic Strength': '高峰交通强度',
+            //         'Randomly Dummy Traffic - Car (On/Off)': '随机虚拟交通 - 汽车（开/关）',
+            //         'Randomly Dummy Traffic - Train (On/Off)': '随机虚拟交通 - 火车（开/关）',
+            //         'Randomly Dummy Traffic - Airplane (On/Off)': '随机虚拟交通 - 飞机（开/关）',
+            //         'Randomly Dummy Traffic - Watercraft (On/Off)': '随机虚拟交通 - 水上交通工具（开/关）',
+            //         'Taxi Preference': '出租车偏好',
+            //         'PublicTransport Preference': '公共交通偏好',
+            //         'PersonalCar Preference': '私家车偏好',
+            //         'Buying PersonalCar Preference': '购买私家车偏好'
 
-                },
-                [MAIN.设置.分类],{
-                    'CityPlayer Traffic Custom': '交通自定义',
-                    'RUSH HOUR CUSTOM MOD': '高峰时间定制',
-                    'RANDOM TRAFFIC CUSTOM MOD': '随机虚拟交通定制',
-                    'CITIZEN TRANSPORTAION PREFERENCE CUSTOM MOD': '居民交通偏好定制',
-                    'EXPERIMAENTAL MOD': '实验性模组'
-                },
-                [MAIN.按钮, MAIN.设置.标题],{
-                    'RESET SETTINGS':'重置设置'
+            //     },
+            //     [MAIN.设置.分类],{
+            //         'CityPlayer Traffic Custom': '交通自定义',
+            //         'RUSH HOUR CUSTOM MOD': '高峰时间定制',
+            //         'RANDOM TRAFFIC CUSTOM MOD': '随机虚拟交通定制',
+            //         'CITIZEN TRANSPORTAION PREFERENCE CUSTOM MOD': '居民交通偏好定制',
+            //         'EXPERIMAENTAL MOD': '实验性模组'
+            //     },
+            //     [MAIN.按钮, MAIN.设置.标题],{
+            //         'RESET SETTINGS':'重置设置'
 
-                },
-                [MAIN.下拉框.值,MAIN.下拉框.标签],{
-                    'Very Low':'非常低',
-                    'Low':'低',
-                    'High':'高',
-                    'Very High':'非常高'
-                },
-                [MAIN.设置.描述],{
-                    "Reset 'CityPlayer Traffic Custom Mod' settings.":'重置城市玩家交通定制模组设置',
-                    "Creates Rush Hours for Cars and Trucks between Outside-Cities. This option can make game more difficult. (Rush hour varies in severity depending on the size of the city)":'在城市之间为汽车和卡车创建高峰时间。此选项可能使游戏更加困难。（高峰时间的严重程度取决于城市的大小）',
-                    "Control Strength of Rush Hour. (Default:3,  Min:1 Max:5)":'控制高峰时间的强度。（默认值：3，最小值：1 最大值：5）',
-                    "Turn On/Off randomly generated dummy Car Vehicles.":'打开/关闭随机生成的虚拟汽车交通。',
-                    "Turn On/Off randomly generated dummy Train Vehicles.":'打开/关闭随机生成的虚拟火车交通。',
-                    "Turn On/Off randomly generated dummy Airplane Vehicles.":'打开/关闭随机生成的虚拟飞机交通。',
-                    "Turn On/Off randomly generated dummy Watercraft Vehicles.":'打开/关闭随机生成的虚拟水上交通。',
-                    "Control Taxi preferences.(If set up to 'None', citizens don't use Taxi.)":"控制出租车偏好。（如果设置为“无”，市民不使用出租车。）",
-                    "Control PublicTransport preferences.":'控制公共交通偏好。',
-                    "Control Personal Car preferences.(If citizens not have own car, they don't use Personal Car)":'控制个人汽车偏好。（如果市民没有自己的汽车，他们不使用个人汽车。）',
-                    "Control Buying Personal Car preferences.(The higher preference, the more likely to buy a Personal Car.)":'控制购买个人汽车的偏好。（偏好值越高，购买个人汽车的可能性越大。）'
-                }
-            ),
-            TWEAKUI: RE(
-                [HOOKUI.顶栏.名称,HOOKUI.面板.标题],{
-                    'TweakUI':'调整 UI',
-                },
-                [rif().class('label_VSW').all],{
-                    'Transportation Overview Height': '交通总览高度',
-                    'Asset Menu Rows': '资产菜单行数'
-                },
-                [rif().class('description_VWf').class('paragraphs_nbD').all],{
-                    'Change the height of the transportation overview.': '更改交通总览的高度。',
-                    'Change the number of rows on the tool asset menu.': '更改工具资产菜单上的行数。'
-                },
-                [rif().class('tab-bar_oPw').class('tab_Hrb')],{
-                    'Settings':'设置'
-                }
+            //     },
+            //     [MAIN.下拉框.值,MAIN.下拉框.标签],{
+            //         'Very Low':'非常低',
+            //         'Low':'低',
+            //         'High':'高',
+            //         'Very High':'非常高'
+            //     },
+            //     [MAIN.设置.描述],{
+            //         "Reset 'CityPlayer Traffic Custom Mod' settings.":'重置城市玩家交通定制模组设置',
+            //         "Creates Rush Hours for Cars and Trucks between Outside-Cities. This option can make game more difficult. (Rush hour varies in severity depending on the size of the city)":'在城市之间为汽车和卡车创建高峰时间。此选项可能使游戏更加困难。（高峰时间的严重程度取决于城市的大小）',
+            //         "Control Strength of Rush Hour. (Default:3,  Min:1 Max:5)":'控制高峰时间的强度。（默认值：3，最小值：1 最大值：5）',
+            //         "Turn On/Off randomly generated dummy Car Vehicles.":'打开/关闭随机生成的虚拟汽车交通。',
+            //         "Turn On/Off randomly generated dummy Train Vehicles.":'打开/关闭随机生成的虚拟火车交通。',
+            //         "Turn On/Off randomly generated dummy Airplane Vehicles.":'打开/关闭随机生成的虚拟飞机交通。',
+            //         "Turn On/Off randomly generated dummy Watercraft Vehicles.":'打开/关闭随机生成的虚拟水上交通。',
+            //         "Control Taxi preferences.(If set up to 'None', citizens don't use Taxi.)":"控制出租车偏好。（如果设置为“无”，市民不使用出租车。）",
+            //         "Control PublicTransport preferences.":'控制公共交通偏好。',
+            //         "Control Personal Car preferences.(If citizens not have own car, they don't use Personal Car)":'控制个人汽车偏好。（如果市民没有自己的汽车，他们不使用个人汽车。）',
+            //         "Control Buying Personal Car preferences.(The higher preference, the more likely to buy a Personal Car.)":'控制购买个人汽车的偏好。（偏好值越高，购买个人汽车的可能性越大。）'
+            //     }
+            // ),
+            // TWEAKUI: RE(
+            //     [HOOKUI.顶栏.名称,HOOKUI.面板.标题],{
+            //         'TweakUI':'调整 UI',
+            //     },
+            //     [rif().class('label_VSW').all],{
+            //         'Transportation Overview Height': '交通总览高度',
+            //         'Asset Menu Rows': '资产菜单行数'
+            //     },
+            //     [rif().class('description_VWf').class('paragraphs_nbD').all],{
+            //         'Change the height of the transportation overview.': '更改交通总览的高度。',
+            //         'Change the number of rows on the tool asset menu.': '更改工具资产菜单上的行数。'
+            //     },
+            //     [rif().class('tab-bar_oPw').class('tab_Hrb')],{
+            //         'Settings':'设置'
+            //     }
 
-            ),
+            // ),
             色彩调整: RE(
                 [MAIN.设置.选项],{
                     'ColorAdjustments':'色彩调整'
@@ -1812,31 +1830,31 @@ function replaceContent() {
                     'Diurnal': '昼夜潮'
                 }
             ),
-            终极监视器: RE(
-                [HOOKUI.面板.标题, HOOKUI.顶栏.名称], {
-                    'City Monitor': '城市监视器',
-                },
-                [rif().class('panel_YqS').index(1).first.all.index(1).index(1)], {
-                    'Electricity': '电力资源可用性',
-                    'Water': '水资源可用率',
-                    'Sewage': '污水处理',
-                    'Garbage Processing': '垃圾处理',
-                    'Fire Hazard': '火灾危险',
-                    'Crime Rate': '犯罪率',
-                    'Traffic Flow': '交通流量',
-                    'Parking Availability': '停车位可用性',
-                    'Healthcare Efficiency': '医疗效率',
-                    'Deathcare Efficiency': '殡仪服务效率',
-                    'Imprisonment Capacity': '监狱容量',
-                    'Education Availability': '教育可用性',
-                    'Income Efficiency': '收入效率',
-                    'Monthly Population Growth': '每月人口增长',
-                    'Avg. Pollution': '平均污染'
-                },
-                [HOOKUI.面板.标题], {
-                    'City': '城市监视器'
-                }
-            ), 
+            // 终极监视器: RE(
+            //     [HOOKUI.面板.标题, HOOKUI.顶栏.名称], {
+            //         'City Monitor': '城市监视器',
+            //     },
+            //     [rif().class('panel_YqS').index(1).first.all.index(1).index(1)], {
+            //         'Electricity': '电力资源可用性',
+            //         'Water': '水资源可用率',
+            //         'Sewage': '污水处理',
+            //         'Garbage Processing': '垃圾处理',
+            //         'Fire Hazard': '火灾危险',
+            //         'Crime Rate': '犯罪率',
+            //         'Traffic Flow': '交通流量',
+            //         'Parking Availability': '停车位可用性',
+            //         'Healthcare Efficiency': '医疗效率',
+            //         'Deathcare Efficiency': '殡仪服务效率',
+            //         'Imprisonment Capacity': '监狱容量',
+            //         'Education Availability': '教育可用性',
+            //         'Income Efficiency': '收入效率',
+            //         'Monthly Population Growth': '每月人口增长',
+            //         'Avg. Pollution': '平均污染'
+            //     },
+            //     [HOOKUI.面板.标题], {
+            //         'City': '城市监视器'
+            //     }
+            // ), 
             额外景观工具扩展_地面: RE(
                 [MAIN.悬浮框.内容,MAIN.悬浮框.标题],{
                     'Surfaces':'地面'
@@ -1930,7 +1948,61 @@ function replaceContent() {
                 'TemperateWaterwayPassClimate': '温带航道气候',
                 'TemperateRiverDeltaClimate': '温带河三角洲气候'
                 }
+            ),
+            交通运输管理器: RE(
+                [MAIN.设置.选项],{
+                    'Extended T. Manager (v0.1.2)':'交通运输管理器'
+                },
+                [MAIN.设置.标签,MAIN.设置.标题],{
+                    'Logging Level': '日志级别',
+                    'Show this mod errors on UI': '在用户界面上显示此模组的错误',
+                    'Mod Version': '模组版本'
+                },
+                [MAIN.设置.描述],{
+                    'Changes the log level of this mod. Verbose mode generates A LOT of logging, be careful.':'更改此模组的日志级别。详细模式会生成大量日志，请小心。',
+                    'Only disable it on emergencies!':'仅在紧急情况下禁用它！',
+                    "The current mod version.\n\nIf version ends with 'B', it's a version compiled for BepInEx framework.":"当前模组版本。\n\n如果版本以'B'结尾，则是为 BepInEx 框架编译的版本。"
+                    
+                }
+            ),
+            模组工具链: RE(
+                [MAIN.设置.标签],{
+                    '工具链状态':'模组开发工具，非必要不需要安装'
+                }
+            ),
+            可放置自长建筑: RE(
+                [MAIN.设置.选项],{
+                    'Plop the Growables':'可放置自长建筑'
+                },
+                [MAIN.设置.标签,MAIN.设置.标题],{
+                    'Disable building levelling':'禁用建筑升级'
+                },
+                [MAIN.设置.描述],{
+                    'Prevents buildings from changing levels, so that they keep their appearance.':'阻止建筑改变级别，使其保持原貌。'
+
+                }
+            ),
+            额外UI界面: RE(
+                [MAIN.设置.选项],{
+                    'Extra UI Screens (v0.1.1)':'额外UI界面'
+                },
+                [MAIN.设置.TAB],{
+                    'Monitors':'显示器',
+                    'About':"关于"
+
+                },
+                [
+                    rif({match:'inc'}).class('option-page_CW8.option-section_VzQ').class('main-column_D0A').class('content_gqa').class('label_DGc.label_ZLb'),
+                    rif({match:'inc'}).class('option-page_CW8.option-section_VzQ').class('info-column_uQ0').class('info-title_a3p')],{
+                    'Use Monitor':'使用显示器'
+                },
+                [MAIN.设置.描述],{
+                    'Create a EUIS overlay over the main screen. Use Ctrl+Tab to alternate between EUIS and game screens.':'在主屏幕上创建一个EUIS覆盖层。使用Ctrl+Tab在EUIS和游戏屏幕之间进行切换。'
+
+                }
             )
+
+
         }
         for (const [ObjName, ObjReItems] of Object.entries(REPLACE_ITEM_NEW)) {
             for (const [ReFunc, ReStrs] of ObjReItems) {
