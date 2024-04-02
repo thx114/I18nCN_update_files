@@ -1,5 +1,5 @@
 //REPLACE_ITEMS_START//
-//version=2.1.1//
+//version=2.1.2//
 class RIF {
     static Match(string, replaceMatch, rString) {
         return ((replaceMatch === 'full' && string === rString) || (replaceMatch === 'inc' && string.includes(rString)) || false)
