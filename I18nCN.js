@@ -274,7 +274,7 @@ function replaceContent() {
                 rif().class('content_yeu').class('toggle-label_UK9'),
                 rif().class('content_yeu').class('label_OqN'),
                 rif().class('content_yeu').class('label_BbZ'),
-                rif().class('picker-popup_pUb').hasHtml.class('name_u39'),
+                rif().class('picker-popup_pUb').class('name_u39'),
                 rif().class('content_yeu.content_AD7').class('page-view_PUO').class('name_u39'),
 
                 rif().class('content_yeu').class('label_tNr'),
